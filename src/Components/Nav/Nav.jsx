@@ -33,7 +33,7 @@ const Nav = () => {
           <div>
             <ul className="md:flex md:items-center z-[2] md:z-auto md:static absolute  bg-primary w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100  top-[-100] ">
               <li className="mx-4 my-6 md:my-0">
-                <a href="" className="text-xl hover:text-white duration-500">
+                <a href="#" className="text-xl hover:text-white duration-500">
                   Home
                 </a>
               </li>

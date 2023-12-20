@@ -1,5 +1,4 @@
 import Nav from "../../Components/Nav/Nav";
-import Swiper from "../../Components/Swiper/Swiper";
 import SwiperQuartos from "../../Components/SwiperQuartos/SwiperQuartos";
 import PrincipalText from "../../Components/PrincipalTexts/PrincipalTexts";
 import DividerText from "../../Components/DividerText/DividerText";
@@ -12,13 +11,14 @@ import SwiperParquinho from "../../Components/SwiperParquinho/SwiperParquinho";
 import Mapa from "../../Components/Mapa/Mapa";
 import Footer from "../../Components/Footer/Footer";
 import WhatsAppButton from "../../Components/WhatsAppButton/WhatsAppButton";
+import RandomSwiper from "../../Components/RandomSwiper/RandomSwiper";
 
 export const Home = () => {
   return (
     <>
       <Nav />
       <div className="p-7">
-        <Swiper />
+        <RandomSwiper />
       </div>
       <Divider />
       <PrincipalText>Uma pousada familiar em Penha</PrincipalText>

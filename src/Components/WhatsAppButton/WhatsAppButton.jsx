@@ -9,7 +9,6 @@ const FloatingWhatsAppButton = ({ phoneNumber }) => {
   return (
     <a
       href={whatsappLink}
-      target="_blank"
       className="fixed bottom-20 right-2 bg-green-500 text-white p-4 rounded-full shadow-md hover:bg-green-600"
       style={{ zIndex: 9999 }}
     >

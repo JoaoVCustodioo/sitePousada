@@ -1,5 +1,5 @@
-// import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+
+import { Navigation, Pagination} from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Kombi from "../../assets/images/kombi.jpg"
@@ -19,7 +19,7 @@ const slides = [
  ]
 
 
-export default () => {
+const RandomSwiper = () => {
   return (
     <Swiper className= 'rounded-xl'
 
@@ -29,8 +29,8 @@ export default () => {
       navigation
       pagination 
   
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) =>  (swiper)}
+      onSlideChange={() =>  ('slide change')}
     >
      {slides.map(slide => (
         <SwiperSlide>
@@ -46,3 +46,5 @@ export default () => {
     
   );
 };
+
+export default RandomSwiper;

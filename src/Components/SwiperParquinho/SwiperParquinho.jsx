@@ -8,8 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import parquinho from "../../assets/images/parquinho.JPG";
-import parquinho3 from "../../assets/images/parquinho1.JPG";
-import parquinho1 from "../../assets/images/parquinho2.jpg";
+
 import parquinho2 from "../../assets/images/parquinho3.jpg";
 
 const slides = [parquinho, parquinho2];
@@ -23,8 +22,8 @@ const SwiperParquinho = () => {
       slidesPerView={1}
       navigation
       pagination
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
+      onSwiper={(swiper) => swiper}
+      onSlideChange={() => "slide change"}
     >
       {slides.map((slide) => (
         <SwiperSlide>

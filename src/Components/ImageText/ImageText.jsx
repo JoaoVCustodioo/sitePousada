@@ -1,4 +1,4 @@
-import { Wifi, Tv, Bath, Coffee, AirVent } from "lucide-react";
+
 
 const ImageText = ({children}) => {
   return (

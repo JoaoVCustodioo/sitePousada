@@ -8,7 +8,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import kombi from "../../assets/images/kombi.jpg";
-import kombi1 from "../../assets/images/kombifachada.jpg";
 
 const slides = [kombi];
 
@@ -21,8 +20,8 @@ const SwiperMadagaskombi = () => {
       slidesPerView={1}
       navigation
       pagination
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
+      onSwiper={(swiper) => swiper}
+      onSlideChange={() => "slide change"}
     >
       {slides.map((slide) => (
         <SwiperSlide>
