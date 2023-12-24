@@ -1,11 +1,11 @@
 import LogoPousada from "../../assets/images/logo-pousada.png";
 
 const Nav = () => {
-  {/*const [isOpen, setIsOpen] = useState(false);
+  /*const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavBar = () => {
     setIsOpen(!isOpen);
-  };*/}
+  };*/
 
   return (
     <>
