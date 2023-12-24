@@ -1,14 +1,11 @@
-{/*import { useState } from "react";
 import LogoPousada from "../../assets/images/logo-pousada.png";
 
-import { Menu, X } from "lucide-react";
-
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  {/*const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavBar = () => {
     setIsOpen(!isOpen);
-  };
+  };*/}
 
   return (
     <>
@@ -22,15 +19,15 @@ const Nav = () => {
             />
           </span>
 
-          <div>
+          {/*<div>
             <button className="p-4 md:hidden" onClick={toggleNavBar}>
               {isOpen ? <X /> : <Menu />}
             </button>
-          </div> 
+  </div> */}
 
           
-        </div>
-        {isOpen && (
+       </div>
+        {/*{isOpen && (
           <div>
             <ul className="md:flex md:items-center z-[2] md:z-auto md:static absolute  bg-primary w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100  top-[-100] ">
               
@@ -52,10 +49,10 @@ const Nav = () => {
               </li>
             </ul>
           </div>
-        )}
+        )}*/}
       </nav>
     </>
   );
 };
 
-export default Nav*/}
+export default Nav;

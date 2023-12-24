@@ -19,7 +19,7 @@ export const Home = () => {
 
   return (
     <>
-       
+       <Nav />
       <div className="p-7 lg:flex lg:flex-col lg:items-center">
         
         <RandomSwiper />
