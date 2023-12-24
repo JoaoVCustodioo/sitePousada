@@ -1,14 +1,14 @@
-import { useState } from "react";
+{/*import { useState } from "react";
 import LogoPousada from "../../assets/images/logo-pousada.png";
 
-{/*import { Menu, X } from "lucide-react";*/}
+import { Menu, X } from "lucide-react";
 
 const Nav = () => {
-  {/*const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavBar = () => {
     setIsOpen(!isOpen);
-  };*/}
+  };
 
   return (
     <>
@@ -21,14 +21,14 @@ const Nav = () => {
               alt="Logo Pousada"
             />
           </span>
-{/*  fazer novas paginas para o nav e arrumar ele
+
           <div>
             <button className="p-4 md:hidden" onClick={toggleNavBar}>
               {isOpen ? <X /> : <Menu />}
             </button>
-          </div> */}
+          </div> 
 
-          {/* fazer um componente com nome  link que recebe a tag <a> que recebe uma children string e quando chegar ao min width ele vira um icone ou algo para onclick */}
+          
         </div>
         {isOpen && (
           <div>
@@ -58,4 +58,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Nav*/}
