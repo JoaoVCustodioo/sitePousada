@@ -13,15 +13,15 @@ import 'swiper/css/pagination';
 
 
 const slides = [
-  Cafe,
   Kombi,
-  Parquinho
+  Parquinho,
+  Cafe
  ]
 
 
 const RandomSwiper = () => {
   return (
-    <Swiper className= 'rounded-xl'
+    <Swiper className= 'rounded-xl  lg:w-2/6'
 
       modules={[Navigation, Pagination ]}
       spaceBetween={2}
@@ -32,9 +32,9 @@ const RandomSwiper = () => {
       onSwiper={(swiper) =>  (swiper)}
       onSlideChange={() =>  ('slide change')}
     >
-     {slides.map(slide => (
-        <SwiperSlide>
-          <img src= {slide} alt={slides} />
+     {slides.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <img src= {slide} alt={`slide-${index}`} />
         </SwiperSlide>
         
      ))}

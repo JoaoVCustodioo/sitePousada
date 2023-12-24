@@ -4,7 +4,7 @@ import { Instagram } from "lucide-react";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-dimwhite w-screen py-8 md:py-16">
+      <footer className="bg-dimwhite  w-full py-8 md:py-16">
         <div className=" mx-auto">
           <div className=" flex flex-col items-center">
             <div className="mb-2">
@@ -22,7 +22,7 @@ const Footer = () => {
             </div>
 
             <div className="mb-2">
-              <p className="text-sm md:text-base">Rua Inácio Francisco de Souza, 123 - Armação - Penha</p>
+              <p className="text-sm md:text-base">Rua Inácio Francisco de Souza, 208 - Armação - Penha</p>
             </div>
             <div className="mb-2 flex items-center" >
 
@@ -41,7 +41,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <Divider />
+        <div className=" lg:flex lg:flex-col lg:items-center"
+        >
+          <Divider />
+        </div>
 
         <div className="flex justify-center text-center ">
           <h1 className="text-sm">

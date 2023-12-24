@@ -14,15 +14,18 @@ import WhatsAppButton from "../../Components/WhatsAppButton/WhatsAppButton";
 import RandomSwiper from "../../Components/RandomSwiper/RandomSwiper";
 
 export const Home = () => {
+
+  const whatsNumber = 554788059849
+
   return (
     <>
-      <Nav />
-      <div className="p-7">
+       <Nav />
+      <div className="p-7 lg:flex lg:flex-col lg:items-center">
+        
         <RandomSwiper />
-      </div>
-      <Divider />
-      <PrincipalText>Uma pousada familiar em Penha</PrincipalText>
-      <Postite>
+        <Divider />
+        <PrincipalText>Uma pousada familiar em Penha</PrincipalText>
+        <Postite>
         Localizada a 1Km do Beto Carrero World, a Pousada Rosália oferece
         acomodações em Penha. O WiFi é gratuito e o café da manhã de cortesia é
         servido diariamente, também fazemos o transfer gratuito para o Beto
@@ -30,22 +33,26 @@ export const Home = () => {
         cuidada por uma fámilia nativa que vive na cidade há mais de 50 anos. O
         tio Mica e a Tia Néia são os proprietários da pousada, sempre fazendo o
         máximo para com que seus hóspedes se sintam em casa.
-      </Postite>
+        </Postite>
+        
+      </div>
+      
+      
 
       <DividerText>Nossos quartos</DividerText>
 
-      <div id="quartos" className="p-7">
+      <div id="quartos" className="p-7 lg:flex lg:flex-col lg:items-center ">
         <SwiperQuartos />
         <ImageText>
           Todos os nossos quartos possuem TV, frigobar, WI-FI gratuíto,
-          Ar-condiocionado, um banheiro privativo e tembém o jogo de quarto
+          Ar-condiocionado, um banheiro privativo e também o jogo de quarto
           completo. Além do deliciosissímo café da manhã servido na pousada!
         </ImageText>
       </div>
 
       <DividerText>Café da manhã</DividerText>
 
-      <div id="cafe" className="p-7">
+      <div id="cafe" className="p-7 lg:flex lg:flex-col lg:items-center">
         <SwiperCafe />
         <ImageText>
           Um café da manhã feito com muito amor e servido todos os dias na
@@ -55,7 +62,7 @@ export const Home = () => {
       </div>
 
       <DividerText>A Madagaskombi</DividerText>
-      <div id="madagaskombi" className="p-7">
+      <div id="madagaskombi" className="p-7 lg:flex lg:flex-col lg:items-center">
         <SwiperMadagaskombi />
         <ImageText>
           A Madagaskombi é uma das principais atrações da pousada, é uma kombi
@@ -68,12 +75,12 @@ export const Home = () => {
 
       <DividerText>O Parquinho</DividerText>
 
-      <div className="p-7">
+      <div className="p-7 lg:flex lg:flex-col lg:items-center">
         <SwiperParquinho />
       </div>
 
       <DividerText>Nossa Localização</DividerText>
-      <div id="contato" className="p-7">
+      <div id="contato" className="p-7 lg:flex lg:flex-col lg:items-center">
         <Postite>
           A nossa pousada está muito bem localizada no bairro Armação, à 300
           metros da praia mais próxima e em uma das principais avenidas da
@@ -88,7 +95,7 @@ export const Home = () => {
         <Footer />
       </footer>
 
-      <WhatsAppButton />
+      <WhatsAppButton phoneNumber={whatsNumber} />
     </>
   );
 };

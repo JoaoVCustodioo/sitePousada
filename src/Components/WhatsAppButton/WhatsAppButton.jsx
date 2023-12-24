@@ -1,10 +1,11 @@
-// FloatingWhatsAppButton.js
+
 
 import React from "react";
 import botao from "../../assets/images/whatsappbotao.png"
 
 const FloatingWhatsAppButton = ({ phoneNumber }) => {
   const whatsappLink = `https://wa.me/${phoneNumber}`;
+
 
   return (
     <a

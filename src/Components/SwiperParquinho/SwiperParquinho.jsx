@@ -15,8 +15,10 @@ const slides = [parquinho, parquinho2];
 
 const SwiperParquinho = () => {
   return (
+   
+   
     <Swiper
-      className="rounded-xl"
+      className="rounded-xl lg:w-2/6"
       modules={[Navigation, Pagination]}
       spaceBetween={2}
       slidesPerView={1}
@@ -25,12 +27,14 @@ const SwiperParquinho = () => {
       onSwiper={(swiper) => swiper}
       onSlideChange={() => "slide change"}
     >
-      {slides.map((slide) => (
-        <SwiperSlide>
-          <img src={slide} alt={slides} />
+      {slides.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <img src={slide} alt={`slide-${index}`} />
         </SwiperSlide>
       ))}
     </Swiper>
+
+    
   );
 };
 
