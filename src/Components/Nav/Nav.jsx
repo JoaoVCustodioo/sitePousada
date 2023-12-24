@@ -1,13 +1,14 @@
 import { useState } from "react";
 import LogoPousada from "../../assets/images/logo-pousada.png";
-import { Menu, X } from "lucide-react";
+
+{/*import { Menu, X } from "lucide-react";*/}
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  {/*const [isOpen, setIsOpen] = useState(false);
 
   const toggleNavBar = () => {
     setIsOpen(!isOpen);
-  };
+  };*/}
 
   return (
     <>
