@@ -30,27 +30,27 @@ const InfoSection = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center py-14">
-      <div className="max-w-[1600px] grid grid-cols-1 md:grid-cols-3 gap-20 px-4">
+    <div className="flex flex-col items-center py-8 md:py-14">
+      <div className="max-w-[1600px] grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20 px-2 md:px-4">
         {cardsData.map((card) => (
           <div
             key={card.id}
-            className="bg-primary rounded-3xl shadow-md p-4 flex flex-col items-center text-center border-2"
+            className="bg-primary rounded-3xl shadow-md p-2 md:p-4 flex flex-col items-center text-center border-2"
           >
             <img 
               src={card.image} 
               alt={card.alt} 
-              className="w-full h-80 object-cover rounded-3xl mb-4 mt-4"
+              className="w-full h-64 md:h-[28rem] object-cover rounded-3xl mb-4 mt-4"
             />
-            <h3 className="text-3xl font-serif  text-secondary mt-5 mb-5 border-b-2 border-brown-600 ">{card.title}</h3>
-            <p className=" px-10 text-xl font-body">{card.text}</p>
+            <h3 className="text-xl md:text-3xl font-serif  text-secondary mt-5 mb-5 border-b-2 border-brown-600 ">{card.title}</h3>
+            <p className="px-2 md:px-10 text-base md:text-xl font-body">{card.text}</p>
           </div>
         ))}
       </div>
-      <p className="mt-24  text-center text-white text-2xl font-serif ">
+      <p className="mt-12 md:mt-24 text-center text-white text-lg md:text-2xl font-serif ">
         Além dessas opções, oferecemos estacionamento e Wi-Fi gratuitos.
       </p>
-      <hr className="w-2/4 mx-auto mt-12 h-[3px] border-0 bg-gradient-to-r from-transparent via-white to-transparent" />
+      <hr className="w-3/4 md:w-2/4 mx-auto mt-8 md:mt-12 h-[3px] border-0 bg-gradient-to-r from-transparent via-white to-transparent" />
     </div>
   );
 };

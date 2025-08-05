@@ -13,17 +13,20 @@ export const Home = () => {
     <>
        <Nav />
       
-      <div className=" lg:flex lg:flex-col lg:items-center mt-5">
+      <div className="flex flex-col items-center mt-20 md:mt-5">
         <HomeNav />
       </div>
 
-      <div className="lg:flex lg:flex-col lg:items-center mt-5">
+      <div className="flex flex-col items-center mt-5">
         <Rooms />
       </div>
      
-
       <footer>
-        <Footer />
+        <Footer 
+          bgColorClass="bg-secondary"
+          textColorClass="text-primary"
+          copyrightTextColorClass="text-primary"
+        />
       </footer>
 
       <WhatsAppButton phoneNumber={whatsNumber} />

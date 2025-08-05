@@ -17,10 +17,10 @@ const CustomSwiper = () => {
   };
 
   return (
-    <div className="relative w-full h-[350px] md:h-[450px] lg:h-[600px] overflow-hidden mt-12 ">
+    <div className="relative w-full h-[200px] sm:h-[300px] md:h-[450px] lg:h-[600px] overflow-hidden mt-8 md:mt-12 ">
       <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
         {slides.map((slide, index) => (
-          <img key={index} src={slide} alt={`slide-${index}`} className="w-full h-full object-cover  top-0 left-0" />
+          <img key={index} src={slide} alt={`slide-${index}`} className="w-full h-full object-cover top-0 left-0" />
         ))}
       </div>
 

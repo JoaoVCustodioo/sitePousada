@@ -1,7 +1,5 @@
 import RoomSwiper from "../RoomSwiper/RoomSwiper";
 import camaCasal from "../../assets/images/camaCasal.png";
-import camaSolteiro from "../../assets/images/camaSolteiro.png";
-import beliche from "../../assets/images/beliche.png";
 import people from "../../assets/images/people.png"
 
 // Duplo
@@ -103,14 +101,14 @@ const Rooms = () => {
   ];
 
   return (
-  <div className="w-full">
+    <div className="w-full">
     {/* Título e Introdução */}
-    <div className="bg-gradient-to-b from-yellow-300 to-yellow-100 py-12 text-center">
-      <h2 className="text-5xl font-serif text-brown-800 mb-2">ACOMODAÇÕES</h2>
-      <p className="italic text-xl text-brown-700">Pousada Rosália</p>
+    <div className="bg-gradient-to-b from-yellow-300 to-yellow-100 py-8 md:py-12 text-center">
+      <h2 className="text-3xl md:text-5xl font-serif text-brown-800 mb-2">ACOMODAÇÕES</h2>
+      <p className="italic text-lg md:text-xl text-brown-700">Pousada Rosália</p>
     </div>
 
-    <div className="bg-primary px-6 py-10 max-w-5xl mx-auto text-brown-800 text-justify text-lg leading-relaxed">
+    <div className="bg-primary px-2 md:px-6 py-6 md:py-10 max-w-5xl mx-auto text-brown-800 text-justify text-base md:text-lg leading-relaxed">
       <p>
         Nossa pousada oferece quartos duplos, triplos, quádruplos e quíntuplos. Ideais para casais, famílias ou grupos de amigos que procuram conforto e tranquilidade.
       </p>
@@ -128,25 +126,25 @@ const Rooms = () => {
 
       return (
         <div key={`${quarto.tipo}-${index}`} className={`${bgClass} w-full`}>
-          <div className="flex flex-col md:flex-row w-full max-w-[1800px] mx-auto p-8 md:p-16 gap-6 md:gap-12 items-center">
+          <div className="flex flex-col md:flex-row w-full max-w-[1800px] mx-auto p-4 md:p-8 lg:p-16 gap-4 md:gap-12 items-center">
             {/* Swiper de Imagens */}
-            <div className={`w-full md:w-1/2 border-[16px] ${borderClass} `}>
+            <div className={`w-full md:w-1/2 border-[8px] md:border-[16px] ${borderClass}`}>
               <RoomSwiper slides={quarto.fotos} />
             </div>
 
             {/* Informações do Quarto */}
-            <div className={`w-full md:w-1/2 ${textClass}`}>
-              <h3 className="text-3xl font-bold mb-1">{quarto.tipo}</h3>
-              <p className="text-xl">{quarto.subtipo}</p>
-              <p className="mb-6">{quarto.descricao}</p>
-              <div className="flex items-center gap-8 text-sm font-semibold">
+            <div className={`w-full md:w-1/2 ${textClass} pl-2 md:pl-16`}>
+              <h3 className="text-2xl md:text-4xl font-bold mb-4">{quarto.tipo}</h3>
+              <p className="text-lg md:text-xl mb-6">{quarto.subtipo}</p>
+              <p className="text-base md:text-lg mb-6">{quarto.descricao}</p>
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-xs md:text-sm font-semibold">
                 <div className="flex items-center gap-2">
-                  <img src={camaCasal} alt="Cama" className="w-16 h-16" />
-                  <span>{quarto.cama}</span>
+                  <img src={camaCasal} alt="Cama" className="w-10 h-10 md:w-16 md:h-16" />
+                  <span className="uppercase">{quarto.cama}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <img src={people} alt="Pessoas" className="w-16 h-16" />
-                  <span>{quarto.pessoas}</span>
+                  <img src={people} alt="Pessoas" className="w-10 h-10 md:w-16 md:h-16" />
+                  <span className="uppercase">{quarto.pessoas}</span>
                 </div>
               </div>
             </div>
