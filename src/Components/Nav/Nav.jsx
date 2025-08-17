@@ -20,9 +20,14 @@ const Nav = () => {
         {/* Separador */}
         <span className="hidden sm:inline-block">|</span>
         {/* Instagram */}
-        <div className="flex items-center gap-1 sm:gap-2">
+        <a 
+          href="https://www.instagram.com/pousadarosaliia/?hl=pt" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 sm:gap-2 hover:opacity-80 transition-opacity"
+        >
           <FaInstagram size={18} />
-        </div>
+        </a>
       </div>
     </div>
   );

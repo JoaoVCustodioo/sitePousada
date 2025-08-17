@@ -1,6 +1,7 @@
 import RoomSwiper from "../RoomSwiper/RoomSwiper";
 import camaCasal from "../../assets/images/camaCasal.png";
 import people from "../../assets/images/people.png"
+import acomodacoesMain from '../../assets/images/acomodacoesMain.jpg';
 
 // Duplo
 import duplo from '../../assets/images/Duplo/duploFoto.jpeg';
@@ -102,58 +103,70 @@ const Rooms = () => {
 
   return (
     <div className="w-full">
-    {/* Título e Introdução */}
-    <div className="bg-gradient-to-b from-yellow-300 to-yellow-100 py-8 md:py-12 text-center">
-      <h2 className="text-3xl md:text-5xl font-serif text-brown-800 mb-2">ACOMODAÇÕES</h2>
-      <p className="italic text-lg md:text-xl text-brown-700">Pousada Rosália</p>
-    </div>
+      {/* Título e Introdução */}
+      <section className="relative h-[300px] md:h-[400px]">
+        <div 
+          className="absolute inset-0 w-full h-full"
+          style={{
+            backgroundImage: `url(${acomodacoesMain})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center">
+          <h2 className="text-3xl md:text-5xl font-serif text-white mb-2">ACOMODAÇÕES</h2>
+          <p className="italic text-lg md:text-xl text-white">Pousada Rosália</p>
+        </div>
+      </section>
 
-    <div className="bg-primary px-2 md:px-6 py-6 md:py-10 max-w-5xl mx-auto text-brown-800 text-justify text-base md:text-lg leading-relaxed">
-      <p>
-        Nossa pousada oferece quartos duplos, triplos, quádruplos e quíntuplos. Ideais para casais, famílias ou grupos de amigos que procuram conforto e tranquilidade.
-      </p>
-      <p className="mt-4">
-        Pensamos em cada detalhe para que você se sinta em casa, com comodidade, praticidade e um ambiente aconchegante.
-      </p>
-    </div>
+      <div className="bg-primary px-2 md:px-6 py-6 md:py-10 max-w-5xl mx-auto text-brown-800 text-justify text-base md:text-lg leading-relaxed">
+        <p>
+          Nossa pousada oferece quartos duplos, triplos, quádruplos e quíntuplos. Ideais para casais, famílias ou grupos de amigos que procuram conforto e tranquilidade.
+        </p>
+        <p className="mt-4">
+          Pensamos em cada detalhe para que você se sinta em casa, com comodidade, praticidade e um ambiente aconchegante.
+        </p>
+      </div>
 
-    {/* Quartos */}
-    {quartosData.map((quarto, index) => {
-      
-      const bgClass = quarto.claro ? 'bg-primary' : 'bg-secondary';
-      const textClass = quarto.claro ? 'text-brown-800' : 'text-white';
-      const borderClass = quarto.claro ? 'border-secondary' : 'border-primary';
+      {/* Quartos */}
+      {quartosData.map((quarto, index) => {
+        
+        const bgClass = quarto.claro ? 'bg-primary' : 'bg-secondary';
+        const textClass = quarto.claro ? 'text-brown-800' : 'text-white';
+        const borderClass = quarto.claro ? 'border-secondary' : 'border-primary';
 
-      return (
-        <div key={`${quarto.tipo}-${index}`} className={`${bgClass} w-full`}>
-          <div className="flex flex-col md:flex-row w-full max-w-[1800px] mx-auto p-4 md:p-8 lg:p-16 gap-4 md:gap-12 items-center">
-            {/* Swiper de Imagens */}
-            <div className={`w-full md:w-1/2 border-[8px] md:border-[16px] ${borderClass}`}>
-              <RoomSwiper slides={quarto.fotos} />
-            </div>
+        return (
+          <div key={`${quarto.tipo}-${index}`} className={`${bgClass} w-full`} data-aos="fade-up" data-aos-delay={index * 100}>
+            <div className="flex flex-col md:flex-row w-full max-w-[1800px] mx-auto p-4 md:p-8 lg:p-16 gap-4 md:gap-12 items-center">
+              {/* Swiper de Imagens */}
+              <div className={`w-full md:w-1/2 border-[8px] md:border-[16px] ${borderClass}`}>
+                <RoomSwiper slides={quarto.fotos} />
+              </div>
 
-            {/* Informações do Quarto */}
-            <div className={`w-full md:w-1/2 ${textClass} pl-2 md:pl-16`}>
-              <h3 className="text-2xl md:text-4xl font-bold mb-4">{quarto.tipo}</h3>
-              <p className="text-lg md:text-xl mb-6">{quarto.subtipo}</p>
-              <p className="text-base md:text-lg mb-6">{quarto.descricao}</p>
-              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-xs md:text-sm font-semibold">
-                <div className="flex items-center gap-2">
-                  <img src={camaCasal} alt="Cama" className="w-10 h-10 md:w-16 md:h-16" />
-                  <span className="uppercase">{quarto.cama}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <img src={people} alt="Pessoas" className="w-10 h-10 md:w-16 md:h-16" />
-                  <span className="uppercase">{quarto.pessoas}</span>
+              {/* Informações do Quarto */}
+              <div className={`w-full md:w-1/2 ${textClass} pl-2 md:pl-16`}>
+                <h3 className="text-2xl md:text-4xl font-bold mb-4">{quarto.tipo}</h3>
+                <p className="text-lg md:text-xl mb-6">{quarto.subtipo}</p>
+                <p className="text-base md:text-lg mb-6">{quarto.descricao}</p>
+                <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-xs md:text-sm font-semibold">
+                  <div className="flex items-center gap-2">
+                    <img src={camaCasal} alt="Cama" className="w-10 h-10 md:w-16 md:h-16" />
+                    <span className="uppercase">{quarto.cama}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <img src={people} alt="Pessoas" className="w-10 h-10 md:w-16 md:h-16" />
+                    <span className="uppercase">{quarto.pessoas}</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      );
-    })}
-  </div>
-);
+        );
+      })}
+    </div>
+  );
 };
 
 export default Rooms;

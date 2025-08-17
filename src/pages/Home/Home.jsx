@@ -30,17 +30,18 @@ export const Home = () => {
           <RoomsInfo className="w-full p-0 bg-beige-100" />
       </div>  
 
-      <div id="cafe" className="p-4 md:p-7 flex flex-col bg-secondary items-center">
+      <div id="experiencias" className="p-7 lg:flex lg:flex-col bg-secondary lg:items-center">
         <InfoSection />
       </div>
       <div className="w-full">
         <Feedback />
       </div>
 
-      <div id="cafe" className="p-4 md:p-7 flex flex-col bg-secondary items-center">
+      <div id="localizacao" className="p-7 lg:flex lg:flex-col bg-secondary lg:items-center">
         <InfoLocation />
       </div>
-      <footer>
+
+      <footer id="contato">
         <Footer 
           bgColorClass="bg-primary" 
           textColorClass="text-secondary"

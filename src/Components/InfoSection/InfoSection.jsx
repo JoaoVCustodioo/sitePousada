@@ -35,6 +35,8 @@ const InfoSection = () => {
         {cardsData.map((card) => (
           <div
             key={card.id}
+            data-aos="fade-up"
+            data-aos-delay={card.id * 100}
             className="bg-primary rounded-3xl shadow-md p-2 md:p-4 flex flex-col items-center text-center border-2"
           >
             <img 

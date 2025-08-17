@@ -1,6 +1,6 @@
 const InfoLocation = () => {
   return (
-    <div className="min-h-[20rem] md:min-h-[24rem] flex flex-col items-center justify-center text-white text-center p-4 md:p-6">
+    <div className="min-h-[20rem] md:min-h-[24rem] flex flex-col items-center justify-center text-white text-center p-4 md:p-6" data-aos="fade-up">
       <h1 className="text-3xl md:text-7xl font-serif mb-8 md:mb-16">LOCALIZAÇÃO</h1>
       <p className="w-full md:w-2/6 text-base md:text-2xl mb-8 md:mb-24">
         A pousada está situada em uma das avenidas mais conceituadas de Penha, com proximidade de praia, mercado, farmácia, pizzaria, pastelaria, hamburgueria e padaria.
