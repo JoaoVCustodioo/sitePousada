@@ -24,3 +24,7 @@ yarn-error.log*
 
 # claude
 .claude/
+
+# env
+.env
+.env.local
