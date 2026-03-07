@@ -1,10 +1,10 @@
 const PrincipalText = ({ children }) => {
   return (
-    <div className="bg-[#ECE5DE] text-center px-2 md:px-4 py-6 md:py-12 lg:py-16">
-      <div className="text-brown-800 text-base md:text-xl lg:text-2xl font-serif leading-relaxed max-w-4xl mx-auto">
+    <div className="bg-primary text-center px-6 md:px-12 py-16 md:py-24 w-full">
+      <div className="text-dark text-lg md:text-2xl lg:text-3xl font-sans font-light leading-relaxed max-w-4xl mx-auto">
         {children}
       </div>
-      <hr className="w-3/4 mx-auto mt-6 h-[3px] border-0 bg-gradient-to-r from-transparent via-secondary to-transparent" />
+      <hr className="w-24 mx-auto mt-12 h-[2px] border-0 bg-secondary/60" />
     </div>
   );
 };

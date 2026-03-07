@@ -1,37 +1,21 @@
-import Nav from "../../Components/Nav/Nav";
-import Footer from "../../Components/Footer/Footer";
-import WhatsAppButton from "../../Components/WhatsAppButton/WhatsAppButton";
-import HomeNav from "../../Components/HomeNav/HomeNav";
+import Header from "../../Components/Header/Header";
 import Rooms from "../../Components/Rooms/Rooms";
+import SiteFooter from "../../Components/SiteFooter/SiteFooter";
+import FloatingWhatsApp from "../../Components/FloatingWhatsApp/FloatingWhatsApp";
 
-
-export const Home = () => {
-
-  const whatsNumber = 554788059849
-
+const Acomodacoes = () => {
   return (
     <>
-       <Nav />
-      
-      <div className="flex flex-col items-center mt-20 md:mt-5">
-        <HomeNav />
-      </div>
+      <Header />
 
-      <div className="flex flex-col items-center mt-5">
+      <main>
         <Rooms />
-      </div>
-     
-      <footer>
-        <Footer 
-          bgColorClass="bg-secondary"
-          textColorClass="text-primary"
-          copyrightTextColorClass="text-primary"
-        />
-      </footer>
+      </main>
 
-      <WhatsAppButton phoneNumber={whatsNumber} />
+      <SiteFooter />
+      <FloatingWhatsApp />
     </>
   );
 };
 
-export default Home;
+export default Acomodacoes;

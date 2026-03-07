@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/logo-pousada.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Uma pousada familiar em Penha - SC" />
+    <meta name="theme-color" content="#846D54" />
     
+    <!-- SEO -->
+    <title>Pousada Rosália — Hospedagem a 1km do Beto Carrero World | Penha/SC</title>
+    <meta name="description" content="Pousada familiar em Penha/SC, a 1km do Beto Carrero World. Café da manhã incluso, transporte gratuito ao parque e quartos para famílias. Fale conosco pelo WhatsApp!" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://pousadarosalia.com.br" />
 
-    <link rel="manifest" href="manifest.json" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Pousada Rosália — Sua casa no litoral catarinense" />
+    <meta property="og:description" content="Pousada familiar em Penha/SC, a 1km do Beto Carrero World. Café da manhã incluso, transporte gratuito e quartos para famílias." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://pousadarosalia.com.br" />
+    <meta property="og:image" content="%PUBLIC_URL%/logo-pousada.png" />
+    <meta property="og:site_name" content="Pousada Rosália" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMY02QPWC6"></script>
@@ -16,16 +27,49 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-GMY02QPWC6');
     </script>
 
-    <title>Pousada Rosália</title>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Pousada Rosália",
+      "description": "Pousada familiar em Penha/SC, a 1km do Beto Carrero World",
+      "url": "https://pousadarosalia.com.br",
+      "telephone": "+554733451821",
+      "email": "pousadarosalia@hotmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Inácio Francisco de Souza, 208",
+        "addressLocality": "Penha",
+        "addressRegion": "SC",
+        "postalCode": "88385-000",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-26.786944",
+        "longitude": "-48.611111"
+      },
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Wi-Fi Gratuito"},
+        {"@type": "LocationFeatureSpecification", "name": "Estacionamento Gratuito"},
+        {"@type": "LocationFeatureSpecification", "name": "Café da Manhã Incluso"},
+        {"@type": "LocationFeatureSpecification", "name": "Transporte para Beto Carrero"}
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "200"
+      }
+    }
+    </script>
   </head>
 
-
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>Você precisa habilitar o JavaScript para visualizar este site.</noscript>
     <div id="root"></div>
   </body>
 </html>

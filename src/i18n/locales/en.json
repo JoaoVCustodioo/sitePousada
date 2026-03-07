@@ -1,0 +1,313 @@
+{
+    "nav": {
+        "home": "Home",
+        "rooms": "Rooms",
+        "experiences": "Experiences",
+        "gallery": "Gallery",
+        "location": "Location",
+        "faq": "FAQ",
+        "contact": "Contact Us"
+    },
+    "hero": {
+        "badge": "500+ Google reviews",
+        "slides": [
+            {
+                "title": "Your home on the coast of Santa Catarina",
+                "subtitle": "Just 1 km from Beto Carrero World · Breakfast included · Free transportation"
+            },
+            {
+                "title": "Fun for the whole family",
+                "subtitle": "Spaces designed for leisure and relaxation for all ages"
+            },
+            {
+                "title": "Flavors that warm your morning",
+                "subtitle": "Homemade breakfast served with love every day"
+            }
+        ],
+        "cta": "Contact Us",
+        "ctaRooms": "Explore our rooms",
+        "discoverMore": "Discover more",
+        "goToSlide": "Go to slide",
+        "whatsappMessage": "Hello! I saw the Pousada Rosália website and would like to know about availability."
+    },
+    "about": {
+        "subtitle": "About us",
+        "title": "Tradition and care",
+        "titleBreak": "since forever",
+        "story": "For over 50 years in the heart of Penha, Pousada Rosália has been lovingly maintained by",
+        "storyTioMica": "Uncle Mica",
+        "storyAnd": "and",
+        "storyTiaNeia": "Aunt Néia",
+        "storyEnd": "— a native family who turned their home into a haven for travelers. Here, every guest is treated like family.",
+        "features": [
+            {
+                "title": "1 km from Beto Carrero",
+                "desc": "Just minutes from the largest theme park in Latin America"
+            },
+            {
+                "title": "Breakfast included",
+                "desc": "Homemade flavors every day, from 8am to 10am"
+            },
+            {
+                "title": "Free transportation",
+                "desc": "Our Madagaskombi takes you to the park in style"
+            },
+            {
+                "title": "Wi-Fi throughout",
+                "desc": "Connected everywhere, all the time"
+            }
+        ]
+    },
+    "roomsPreview": {
+        "subtitle": "Accommodations",
+        "title": "Comfort for your rest",
+        "description": "Rooms designed for families, couples and friends to feel at home, with all the comfort you deserve.",
+        "rooms": [
+            {
+                "name": "Double Room",
+                "capacity": "2 guests",
+                "badge": "No balcony"
+            },
+            {
+                "name": "Quadruple Room",
+                "capacity": "4 guests",
+                "badge": "No balcony"
+            },
+            {
+                "name": "Quintuple Room",
+                "capacity": "5 guests",
+                "badge": "With balcony"
+            }
+        ],
+        "viewDetails": "View details",
+        "viewAll": "View all rooms"
+    },
+    "experiences": {
+        "subtitle": "Experiences",
+        "title": "Unforgettable moments",
+        "cards": [
+            {
+                "title": "Breakfast",
+                "subtitle": "Delicious and varied",
+                "text": "Served daily from 8am to 10am with fresh bread, fruits, homemade cakes and delicious savory snacks prepared with love."
+            },
+            {
+                "title": "Madagaskombi",
+                "subtitle": "Exclusive transport",
+                "text": "One of our favorite attractions! Free and exclusive transportation to Beto Carrero World in our famous Madagaskombi."
+            },
+            {
+                "title": "Leisure Area",
+                "subtitle": "For all ages",
+                "text": "Children's playground for kids and a cozy rest area for adults to relax peacefully."
+            },
+            {
+                "title": "Beach & Shops",
+                "subtitle": "Everything nearby",
+                "text": "5 minutes walk from the beach and surrounded by markets, pharmacies, restaurants and bakeries — everything you need."
+            }
+        ],
+        "parking": "Free parking",
+        "wifi": "Wi-Fi throughout the inn"
+    },
+    "gallery": {
+        "subtitle": "Gallery",
+        "title": "Discover our inn",
+        "categories": {
+            "todos": "All",
+            "quartos": "Rooms",
+            "areas_comuns": "Common Areas",
+            "cafe_da_manha": "Breakfast"
+        },
+        "viewPhoto": "View photo",
+        "close": "Close",
+        "prev": "Previous",
+        "next": "Next"
+    },
+    "testimonials": {
+        "subtitle": "Testimonials",
+        "title": "What our guests say",
+        "badge": "500+ Google reviews",
+        "items": [
+            {
+                "name": "Rodrigo Capitano",
+                "text": "On foot, Pousada Rosália is 5 minutes from the beach and less than 5 minutes from a wide range of shops. The inn itself is charming. You can see the care in every detail. Comfortable room, impeccable breakfast. We loved everything!"
+            },
+            {
+                "name": "Bernardo Kowalsky",
+                "text": "Pousada Rosália is, for me, the best inn in Penha! They have a great structure and spectacular service. I feel at home when I go there, always very well received. They even have transportation to the park!"
+            },
+            {
+                "name": "Maria Eduarda",
+                "text": "Wonderful place! We were enchanted by the hospitality of Uncle Mica and Aunt Néia. The breakfast is incredible and the Madagaskombi is a unique experience. We will definitely return!"
+            },
+            {
+                "name": "Felipe Andrade",
+                "text": "Best value for money in the region! Clean and comfortable rooms, delicious breakfast and a prime location. The team is super attentive and helpful."
+            }
+        ],
+        "prevLabel": "Previous testimonial",
+        "nextLabel": "Next testimonial"
+    },
+    "faq": {
+        "subtitle": "FAQ",
+        "title": "Questions and answers",
+        "description": "Find answers to the most common questions about Pousada Rosália.",
+        "items": [
+            {
+                "question": "How far is the inn from Beto Carrero World?",
+                "answer": "Pousada Rosália is just 1 km from Beto Carrero World, with quick and easy access. We offer free transportation to the park in our famous Madagaskombi!"
+            },
+            {
+                "question": "Is breakfast included in the daily rate?",
+                "answer": "Yes! Our delicious breakfast is included in all rates. Served daily from 8am to 10am, with fresh bread, seasonal fruits, homemade cakes and assorted savories."
+            },
+            {
+                "question": "Do you offer transportation to the park?",
+                "answer": "Yes! We offer free and exclusive transportation to Beto Carrero World in our famous Madagaskombi. It's a unique experience that our guests love!"
+            },
+            {
+                "question": "What room options are available?",
+                "answer": "We offer Double, Triple (with and without balcony), Quadruple (with and without balcony) and Quintuple rooms with balcony. All equipped with air conditioning, TV, mini fridge and Wi-Fi."
+            },
+            {
+                "question": "Is there parking at the inn?",
+                "answer": "Yes, we offer free parking for all guests within the inn's grounds."
+            },
+            {
+                "question": "Does the inn accept pets?",
+                "answer": "To ensure the comfort of all guests, please check our pet-friendly policy directly via WhatsApp, as it varies by season and availability."
+            },
+            {
+                "question": "Is there Wi-Fi at the inn?",
+                "answer": "Yes! Free, quality Wi-Fi throughout the inn, including rooms and common areas."
+            },
+            {
+                "question": "How do I make a reservation?",
+                "answer": "Reservations are made exclusively via WhatsApp. Just click any 'Contact Us' button on the site or send a message to (47) 98805-9849. We respond quickly!"
+            },
+            {
+                "question": "What payment methods are accepted?",
+                "answer": "We accept PIX, cash, credit and debit cards. For more details on special conditions, get in touch via WhatsApp."
+            },
+            {
+                "question": "Is the inn close to the beach?",
+                "answer": "Yes! The beach is approximately 5 minutes walk from the inn. We are also surrounded by markets, pharmacies, restaurants and other shops."
+            }
+        ]
+    },
+    "location": {
+        "subtitle": "How to Get Here",
+        "title": "Our Location",
+        "description": "Perfectly located on one of the most prestigious avenues in Penha. Everything you need just steps away.",
+        "address": "Pousada Rosália",
+        "street": "Rua Inácio Francisco de Souza, 208",
+        "neighborhood": "Bairro Armação — Penha/SC",
+        "landmarks": [
+            {
+                "name": "Beto Carrero World",
+                "distance": "1 km"
+            },
+            {
+                "name": "Armação Beach",
+                "distance": "500m"
+            },
+            {
+                "name": "Market / Pharmacy",
+                "distance": "300m"
+            },
+            {
+                "name": "Restaurants",
+                "distance": "200m"
+            }
+        ],
+        "openMaps": "Open in Google Maps"
+    },
+    "cta": {
+        "title": "Ready to live this experience?",
+        "subtitle": "Get in touch and secure your stay at the best inn in Penha. We are waiting for you!",
+        "phone": "Call now: (47) 3345-1821"
+    },
+    "footer": {
+        "brand": "Tradition, comfort and the hospitality you deserve, just 1km from the largest theme park in Latin America.",
+        "contactBtn": "Contact Us",
+        "navigation": "Navigation",
+        "contact": "Contact",
+        "hours": "Hours",
+        "checkin": "Check-in: from 2pm",
+        "checkout": "Check-out: until 11am",
+        "address": "Address",
+        "social": "Social Media",
+        "copyright": "Pousada Rosália. All rights reserved.",
+        "createdWith": "Created with",
+        "love": "care and dedication"
+    },
+    "floating": {
+        "badge": "Talk to us! 💬",
+        "ariaLabel": "Contact us on WhatsApp",
+        "message": "Hello! I'd like to know about room availability at Pousada Rosália."
+    },
+    "rooms": {
+        "heroSubtitle": "Lodging",
+        "heroTitle": "Accommodations",
+        "heroDesc": "6 options for every type of traveler",
+        "introText": "Elegance and comfort in every detail. Our rooms were designed so that families, couples and friends feel perfectly at home.",
+        "layout": "Layout",
+        "capacity": "Capacity",
+        "climate": "Climate",
+        "frigobar": "Mini Fridge",
+        "checkAvailability": "Check Availability",
+        "withBalcony": "With balcony",
+        "withoutBalcony": "No balcony",
+        "items": [
+            {
+                "type": "Double Room",
+                "subtype": "No balcony",
+                "description": "The double room features a comfortable double bed, mini fridge, soft towels, TV and complete bed linen. Also equipped with hot and cold air conditioning.",
+                "people": "2 adults",
+                "bed": "Double bed",
+                "whatsMsg": "Hello! I'm interested in the Double Room at Pousada Rosália. Could you tell me about availability?"
+            },
+            {
+                "type": "Triple Room",
+                "subtype": "No balcony",
+                "description": "Equipped with a double bed and a single bed, mini fridge, soft towels, TV and complete bed linen, plus hot and cold air conditioning.",
+                "people": "3 guests",
+                "bed": "1 Double + 1 Single",
+                "whatsMsg": "Hello! I'm interested in the Triple Room (no balcony) at Pousada Rosália. Could you tell me about availability?"
+            },
+            {
+                "type": "Triple Room",
+                "subtype": "With balcony",
+                "description": "Ideal for those seeking comfort with an extra outdoor space. Equipped with double bed, single bed, air conditioning, mini fridge and TV.",
+                "people": "3 guests",
+                "bed": "1 Double + 1 Single",
+                "whatsMsg": "Hello! I'm interested in the Triple Room with Balcony at Pousada Rosália. Could you tell me about availability?"
+            },
+            {
+                "type": "Quadruple Room",
+                "subtype": "No balcony",
+                "description": "Perfect for families needing more space. Double bed and single beds, mini fridge, air conditioning, TV and great comfort.",
+                "people": "4 guests",
+                "bed": "Double + 2 Single",
+                "whatsMsg": "Hello! I'm interested in the Quadruple Room at Pousada Rosália. Could you tell me about availability?"
+            },
+            {
+                "type": "Quadruple Room",
+                "subtype": "With balcony",
+                "description": "Spacious with a private balcony for up to four people, with excellent ventilation, natural lighting and practicality.",
+                "people": "4 guests",
+                "bed": "Double + 2 Single",
+                "whatsMsg": "Hello! I'm interested in the Quadruple Room with Balcony at Pousada Rosália. Could you tell me about availability?"
+            },
+            {
+                "type": "Quintuple Room",
+                "subtype": "With balcony",
+                "description": "Our largest room, designed for groups or larger families. Stands out for its ample interior space and balcony that integrates the environment.",
+                "people": "5 guests",
+                "bed": "Double + 3 Single",
+                "whatsMsg": "Hello! I'm interested in the Quintuple Room with Balcony at Pousada Rosália. Could you tell me about availability?"
+            }
+        ]
+    }
+}

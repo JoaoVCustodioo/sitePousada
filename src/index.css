@@ -1,9 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-    background-color: #ECE5DE;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-  
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    overflow-y: overlay;
+    /* Allows scrollbar to hover over content on WebKit */
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #FAF9F6;
+    color: #2A221B;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: #846D54;
+    color: #ffffff;
+  }
+
+  /* Custom scrollbar — glassmorphism overlay */
+  ::-webkit-scrollbar {
+    width: 8px;
+    background: transparent !important;
+    /* Force transparent track */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(132, 109, 84, 0.4);
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(132, 109, 84, 0.7);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl lg:text-6xl font-serif font-light text-dark tracking-wide;
+  }
+
+  .section-subtitle {
+    @apply text-secondary font-sans font-medium tracking-widest uppercase text-xs md:text-sm mb-4;
+  }
+
+  .section-divider {
+    @apply w-20 h-[2px] bg-secondary/40 mx-auto mt-10;
+  }
+
+  .btn-whatsapp {
+    @apply inline-flex items-center gap-3 bg-accent hover:bg-green-600 text-white font-sans font-semibold text-sm tracking-wider uppercase px-8 py-4 rounded-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg shadow-accent/20;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border border-secondary text-secondary hover:bg-secondary hover:text-white font-sans font-medium text-sm tracking-widest uppercase px-8 py-3 rounded-sm transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-xl transition-all duration-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
