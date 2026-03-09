@@ -75,65 +75,67 @@ const Hero = () => {
 
             <div className="absolute inset-0 z-20 bg-gradient-to-t from-dark/70 via-dark/30 to-dark/10" />
 
-            <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-6">
-                <div className={`flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full mb-8 transition-all duration-1000 ${currentIndex === 0 ? "translate-y-0 opacity-100" : "translate-y-0 opacity-100"}`}>
-                    <span className="text-yellow-400 text-sm">★ 4.9</span>
-                    <span className="text-white/40">|</span>
-                    <span className="text-xs font-medium tracking-wide">{t("hero.badge")}</span>
-                </div>
+            <div className="absolute inset-0 z-30 flex flex-col items-center text-center px-6 pt-28">
+                <div className="flex-1 flex flex-col items-center justify-center">
+                    <div className={`flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-5 py-2 rounded-full mb-4 transition-all duration-1000 ${currentIndex === 0 ? "translate-y-0 opacity-100" : "translate-y-0 opacity-100"}`}>
+                        <span className="text-yellow-400 text-sm">★ 4.9</span>
+                        <span className="text-white/40">|</span>
+                        <span className="text-xs font-medium tracking-wide">{t("hero.badge")}</span>
+                    </div>
 
-                <h1
-                    key={`title-${currentIndex}`}
-                    className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-light tracking-wide text-white mb-5 max-w-5xl animate-fade-in"
-                >
-                    {slides[currentIndex].title}
-                </h1>
-
-                <p
-                    key={`sub-${currentIndex}`}
-                    className="text-base md:text-lg lg:text-xl font-sans text-white font-medium mb-10 max-w-2xl leading-relaxed animate-slide-up drop-shadow-lg"
-                    style={{ textShadow: "0 2px 8px rgba(0,0,0,0.7)" }}
-                >
-                    {slides[currentIndex].subtitle}
-                </p>
-
-                <div className="flex flex-col sm:flex-row items-center gap-4">
-                    <a
-                        href={`https://wa.me/554788059849?text=${encodeURIComponent(t("hero.whatsappMessage"))}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="btn-whatsapp text-base"
+                    <h1
+                        key={`title-${currentIndex}`}
+                        className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-light tracking-wide text-white mb-3 max-w-5xl animate-fade-in"
                     >
-                        <FaWhatsapp size={22} />
-                        {t("hero.cta")}
-                    </a>
-                    <button
-                        onClick={scrollToQuartos}
-                        className="flex items-center gap-2 border border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-sans font-medium text-sm tracking-wider uppercase px-8 py-3.5 rounded-sm transition-all duration-300"
-                    >
-                        {t("hero.ctaRooms")}
-                    </button>
-                </div>
-            </div>
+                        {slides[currentIndex].title}
+                    </h1>
 
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-10">
-                <div className="flex justify-center gap-3">
-                    {slides.map((_, index) => (
+                    <p
+                        key={`sub-${currentIndex}`}
+                        className="text-base md:text-lg lg:text-xl font-sans text-white font-medium mb-6 max-w-2xl leading-relaxed animate-slide-up drop-shadow-lg"
+                        style={{ textShadow: "0 2px 8px rgba(0,0,0,0.7)" }}
+                    >
+                        {slides[currentIndex].subtitle}
+                    </p>
+
+                    <div className="flex flex-col sm:flex-row items-center gap-4">
+                        <a
+                            href={`https://wa.me/554788059849?text=${encodeURIComponent(t("hero.whatsappMessage"))}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn-whatsapp text-base"
+                        >
+                            <FaWhatsapp size={22} />
+                            {t("hero.cta")}
+                        </a>
                         <button
-                            key={index}
-                            onClick={() => goToSlide(index)}
-                            className={`transition-all duration-500 rounded-full ${currentIndex === index
-                                ? "w-10 h-2 bg-secondary"
-                                : "w-2 h-2 bg-white/40 hover:bg-white/70"
-                                }`}
-                            aria-label={`${t("hero.goToSlide")} ${index + 1}`}
-                        />
-                    ))}
+                            onClick={scrollToQuartos}
+                            className="flex items-center gap-2 border border-white/40 text-white hover:bg-white/10 backdrop-blur-sm font-sans font-medium text-sm tracking-wider uppercase px-8 py-3.5 rounded-sm transition-all duration-300"
+                        >
+                            {t("hero.ctaRooms")}
+                        </button>
+                    </div>
                 </div>
 
-                <div className="flex flex-col items-center gap-2 text-white/60 animate-bounce-subtle">
-                    <span className="text-[10px] uppercase tracking-[0.2em] font-sans">{t("hero.discoverMore")}</span>
-                    <FaChevronDown size={14} />
+                <div className="pb-6 flex flex-col items-center gap-3">
+                    <div className="flex justify-center gap-3">
+                        {slides.map((_, index) => (
+                            <button
+                                key={index}
+                                onClick={() => goToSlide(index)}
+                                className={`transition-all duration-500 rounded-full ${currentIndex === index
+                                    ? "w-10 h-2 bg-secondary"
+                                    : "w-2 h-2 bg-white/40 hover:bg-white/70"
+                                    }`}
+                                aria-label={`${t("hero.goToSlide")} ${index + 1}`}
+                            />
+                        ))}
+                    </div>
+
+                    <div className="flex flex-col items-center gap-2 text-white/60 animate-bounce-subtle">
+                        <span className="text-[10px] uppercase tracking-[0.2em] font-sans">{t("hero.discoverMore")}</span>
+                        <FaChevronDown size={14} />
+                    </div>
                 </div>
             </div>
         </section>
