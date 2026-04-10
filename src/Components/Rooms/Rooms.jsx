@@ -1,50 +1,50 @@
 import { Link } from "react-router-dom";
 import RoomSwiper from "../RoomSwiper/RoomSwiper";
 import { useLanguage } from "../../i18n/LanguageContext";
-import acomodacoesMain from "../../assets/images/acomodacoesMain.jpg";
 import { FaUserFriends, FaBed, FaWifi, FaSnowflake, FaTv, FaWhatsapp, FaChevronRight } from "react-icons/fa";
+import acomodacoesMainWebp from '../../assets/images/acomodacoesMain-desktop.webp'
 
-// Duplo
-import duplo from "../../assets/images/Duplo/duploFoto.jpeg";
-import duplo1 from "../../assets/images/Duplo/duploFoto1.jpeg";
-import duplo2 from "../../assets/images/Duplo/duploFoto2.jpeg";
+// Duplo WebP
+import duploWebp from '../../assets/images/Duplo/duploFoto-desktop.webp'
+import duplo1Webp from '../../assets/images/Duplo/duploFoto1-desktop.webp'
+import duplo2Webp from '../../assets/images/Duplo/duploFoto2-desktop.webp'
 
-// Triplo
-import triplo from "../../assets/images/Triplo/triplo.jpeg";
-import triplo1 from "../../assets/images/Triplo/triplo1.jpeg";
-import triplo2 from "../../assets/images/Triplo/triplo2.jpeg";
+// Triplo WebP
+import triploWebp from '../../assets/images/Triplo/triplo-desktop.webp'
+import triplo1Webp from '../../assets/images/Triplo/triplo1-desktop.webp'
+import triplo2Webp from '../../assets/images/Triplo/triplo2-desktop.webp'
 
-// Quadruplo
-import quadruplo from "../../assets/images/Quadruplo/quadruplo.jpeg";
-import quadruplo1 from "../../assets/images/Quadruplo/quadruplo1.jpeg";
-import quadruplo2 from "../../assets/images/Quadruplo/quadruplo2.jpeg";
-import quadruplo4 from "../../assets/images/Quadruplo/quadruplo4.jpeg";
-import quadruplo5 from "../../assets/images/Quadruplo/quadruplo5.jpeg";
+// Quadruplo WebP
+import quadruploWebp from '../../assets/images/Quadruplo/quadruplo-desktop.webp'
+import quadruplo1Webp from '../../assets/images/Quadruplo/quadruplo1-desktop.webp'
+import quadruplo2Webp from '../../assets/images/Quadruplo/quadruplo2-desktop.webp'
+import quadruplo4Webp from '../../assets/images/Quadruplo/quadruplo4-desktop.webp'
+import quadruplo5Webp from '../../assets/images/Quadruplo/quadruplo5-desktop.webp'
 
-// Triplo Varanda
-import triploVaranda from "../../assets/images/TriploVaranda/triploVaranda.jpeg";
-import triploVaranda1 from "../../assets/images/TriploVaranda/triploVaranda1.jpeg";
-import triploVaranda2 from "../../assets/images/TriploVaranda/triploVaranda2.jpeg";
-import triploVaranda3 from "../../assets/images/TriploVaranda/triplovaranda3.jpeg";
+// Triplo Varanda WebP
+import triploVarandaWebp from '../../assets/images/TriploVaranda/triploVaranda-desktop.webp'
+import triploVaranda1Webp from '../../assets/images/TriploVaranda/triploVaranda1-desktop.webp'
+import triploVaranda2Webp from '../../assets/images/TriploVaranda/triploVaranda2-desktop.webp'
+import triploVaranda3Webp from '../../assets/images/TriploVaranda/triplovaranda3-desktop.webp'
 
-// Quadruplo Varanda
-import quadruploVaranda from "../../assets/images/QuadruploVaranda/quadruploVaranda.jpeg";
-import quadruploVaranda1 from "../../assets/images/QuadruploVaranda/quadruploVaranda1.jpeg";
-import quadruploVaranda2 from "../../assets/images/QuadruploVaranda/quadruploVaranda2.jpeg";
+// Quadruplo Varanda WebP
+import quadruploVarandaWebp from '../../assets/images/QuadruploVaranda/quadruploVaranda-desktop.webp'
+import quadruploVaranda1Webp from '../../assets/images/QuadruploVaranda/quadruploVaranda1-desktop.webp'
+import quadruploVaranda2Webp from '../../assets/images/QuadruploVaranda/quadruploVaranda2-desktop.webp'
 
-// Quintuplo Varanda
-import quintuplo from "../../assets/images/QuintuploVaranda/quintuplo.jpeg";
-import quintuplo1 from "../../assets/images/QuintuploVaranda/quintuplo1.jpeg";
-import quintuplo2 from "../../assets/images/QuintuploVaranda/quintuplo2.jpeg";
-import quintuplo3 from "../../assets/images/QuintuploVaranda/quintuplo3.jpeg";
+// Quintuplo Varanda WebP
+import quintuploWebp from '../../assets/images/QuintuploVaranda/quintuplo-desktop.webp'
+import quintuplo1Webp from '../../assets/images/QuintuploVaranda/quintuplo1-desktop.webp'
+import quintuplo2Webp from '../../assets/images/QuintuploVaranda/quintuplo2-desktop.webp'
+import quintuplo3Webp from '../../assets/images/QuintuploVaranda/quintuplo3-desktop.webp'
 
 const roomPhotos = [
-  [duplo, duplo1, duplo2],
-  [triplo, triplo1, triplo2],
-  [triploVaranda, triploVaranda1, triploVaranda2, triploVaranda3],
-  [quadruplo, quadruplo1, quadruplo2, quadruplo4, quadruplo5],
-  [quadruploVaranda, quadruploVaranda1, quadruploVaranda2],
-  [quintuplo, quintuplo1, quintuplo2, quintuplo3],
+  [duploWebp, duplo1Webp, duplo2Webp],
+  [triploWebp, triplo1Webp, triplo2Webp],
+  [triploVarandaWebp, triploVaranda1Webp, triploVaranda2Webp, triploVaranda3Webp],
+  [quadruploWebp, quadruplo1Webp, quadruplo2Webp, quadruplo4Webp, quadruplo5Webp],
+  [quadruploVarandaWebp, quadruploVaranda1Webp, quadruploVaranda2Webp],
+  [quintuploWebp, quintuplo1Webp, quintuplo2Webp, quintuplo3Webp],
 ];
 
 const Rooms = () => {
@@ -58,7 +58,7 @@ const Rooms = () => {
         <div
           className="absolute inset-0 w-full h-full"
           style={{
-            backgroundImage: `url(${acomodacoesMain})`,
+            backgroundImage: `url(${acomodacoesMainWebp})`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             backgroundAttachment: "fixed",
