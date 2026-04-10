@@ -22,26 +22,47 @@ import triploVaranda from "../../assets/images/TriploVaranda/triploVaranda.jpeg"
 import quadruploVaranda from "../../assets/images/QuadruploVaranda/quadruploVaranda.jpeg";
 import quintuplo from "../../assets/images/QuintuploVaranda/quintuplo.jpeg";
 
+// WebP desktop (lazy, below the fold)
+import kombiWebp from '../../assets/images/kombi-desktop.webp'
+import cafeWebp from '../../assets/images/cafe-desktop.webp'
+import cafe1Webp from '../../assets/images/cafe1-desktop.webp'
+import cafe2Webp from '../../assets/images/cafe2-desktop.webp'
+import cafe3Webp from '../../assets/images/cafe3-desktop.webp'
+import parquinhoWebp from '../../assets/images/parquinho-desktop.webp'
+import parquinho1Webp from '../../assets/images/parquinho1-desktop.webp'
+import parquinho2Webp from '../../assets/images/parquinho2-desktop.webp'
+import parquinho3Webp from '../../assets/images/parquinho3-desktop.webp'
+import fotoQuartoMainWebp from '../../assets/images/fotoNossosQuartosMain-desktop.webp'
+import acomodacoesMainWebp from '../../assets/images/acomodacoesMain-desktop.webp'
+import duploWebp from '../../assets/images/Duplo/duploFoto-desktop.webp'
+import duplo1Webp from '../../assets/images/Duplo/duploFoto1-desktop.webp'
+import triploWebp from '../../assets/images/Triplo/triplo-desktop.webp'
+import quadruploWebp from '../../assets/images/Quadruplo/quadruplo-desktop.webp'
+import quadruplo1Webp from '../../assets/images/Quadruplo/quadruplo1-desktop.webp'
+import triploVarandaWebp from '../../assets/images/TriploVaranda/triploVaranda-desktop.webp'
+import quadruploVarandaWebp from '../../assets/images/QuadruploVaranda/quadruploVaranda-desktop.webp'
+import quintuploWebp from '../../assets/images/QuintuploVaranda/quintuplo-desktop.webp'
+
 const allPhotos = [
-    { src: fotoQuartoMain, alt: "Pousada overview", category: "areas_comuns" },
-    { src: acomodacoesMain, alt: "Acomodações details", category: "areas_comuns" },
-    { src: kombi, alt: "Madagaskombi", category: "areas_comuns" },
-    { src: cafe, alt: "Breakfast", category: "cafe_da_manha" },
-    { src: cafe1, alt: "Breakfast details", category: "cafe_da_manha" },
-    { src: cafe2, alt: "Breakfast table", category: "cafe_da_manha" },
-    { src: cafe3, alt: "Breakfast items", category: "cafe_da_manha" },
-    { src: parquinho, alt: "Playground overview", category: "areas_comuns" },
-    { src: parquinho1, alt: "Playground slide", category: "areas_comuns" },
-    { src: parquinho2, alt: "Playground area", category: "areas_comuns" },
-    { src: parquinho3, alt: "Playground details", category: "areas_comuns" },
-    { src: duplo, alt: "Double Room", category: "quartos" },
-    { src: duplo1, alt: "Double Room detail", category: "quartos" },
-    { src: triplo, alt: "Triple Room", category: "quartos" },
-    { src: quadruplo, alt: "Quadruple Room", category: "quartos" },
-    { src: quadruplo1, alt: "Quadruple Room detail", category: "quartos" },
-    { src: triploVaranda, alt: "Triple Room w/ Balcony", category: "quartos" },
-    { src: quadruploVaranda, alt: "Quadruple Room w/ Balcony", category: "quartos" },
-    { src: quintuplo, alt: "Quintuple Room w/ Balcony", category: "quartos" },
+    { src: fotoQuartoMain, srcWebp: fotoQuartoMainWebp, alt: "Pousada overview", category: "areas_comuns" },
+    { src: acomodacoesMain, srcWebp: acomodacoesMainWebp, alt: "Acomodações details", category: "areas_comuns" },
+    { src: kombi, srcWebp: kombiWebp, alt: "Madagaskombi", category: "areas_comuns" },
+    { src: cafe, srcWebp: cafeWebp, alt: "Breakfast", category: "cafe_da_manha" },
+    { src: cafe1, srcWebp: cafe1Webp, alt: "Breakfast details", category: "cafe_da_manha" },
+    { src: cafe2, srcWebp: cafe2Webp, alt: "Breakfast table", category: "cafe_da_manha" },
+    { src: cafe3, srcWebp: cafe3Webp, alt: "Breakfast items", category: "cafe_da_manha" },
+    { src: parquinho, srcWebp: parquinhoWebp, alt: "Playground overview", category: "areas_comuns" },
+    { src: parquinho1, srcWebp: parquinho1Webp, alt: "Playground slide", category: "areas_comuns" },
+    { src: parquinho2, srcWebp: parquinho2Webp, alt: "Playground area", category: "areas_comuns" },
+    { src: parquinho3, srcWebp: parquinho3Webp, alt: "Playground details", category: "areas_comuns" },
+    { src: duplo, srcWebp: duploWebp, alt: "Double Room", category: "quartos" },
+    { src: duplo1, srcWebp: duplo1Webp, alt: "Double Room detail", category: "quartos" },
+    { src: triplo, srcWebp: triploWebp, alt: "Triple Room", category: "quartos" },
+    { src: quadruplo, srcWebp: quadruploWebp, alt: "Quadruple Room", category: "quartos" },
+    { src: quadruplo1, srcWebp: quadruplo1Webp, alt: "Quadruple Room detail", category: "quartos" },
+    { src: triploVaranda, srcWebp: triploVarandaWebp, alt: "Triple Room w/ Balcony", category: "quartos" },
+    { src: quadruploVaranda, srcWebp: quadruploVarandaWebp, alt: "Quadruple Room w/ Balcony", category: "quartos" },
+    { src: quintuplo, srcWebp: quintuploWebp, alt: "Quintuple Room w/ Balcony", category: "quartos" },
 ];
 
 const categoryKeys = ["todos", "quartos", "areas_comuns", "cafe_da_manha"];
@@ -111,13 +132,18 @@ const Gallery = () => {
                                 }`}
                             onClick={() => openLightbox(index)}
                         >
-                            <img
-                                src={photo.src}
-                                alt={photo.alt}
-                                className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${index === 0 ? "h-full min-h-[300px] md:min-h-[400px]" : "aspect-square h-full"
-                                    }`}
-                                loading="lazy"
-                            />
+                            <picture>
+                                <source srcSet={photo.srcWebp} type="image/webp" />
+                                <img
+                                    src={photo.src}
+                                    alt={photo.alt}
+                                    width={800}
+                                    height={600}
+                                    loading="lazy"
+                                    className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${index === 0 ? "h-full min-h-[300px] md:min-h-[400px]" : "aspect-square h-full"
+                                        }`}
+                                />
+                            </picture>
                             <div className="absolute inset-0 bg-dark/0 group-hover:bg-dark/40 transition-all duration-500 flex items-center justify-center">
                                 <span className="text-white font-sans text-xs uppercase tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
                                     {t("gallery.viewPhoto")}
@@ -152,12 +178,15 @@ const Gallery = () => {
                         <FaChevronLeft size={28} />
                     </button>
 
-                    <img
-                        src={filteredPhotos[lightboxIndex]?.src}
-                        alt={filteredPhotos[lightboxIndex]?.alt}
-                        className="max-w-[90vw] max-h-[85vh] object-contain rounded-sm shadow-2xl"
-                        onClick={(e) => e.stopPropagation()}
-                    />
+                    <picture>
+                        <source srcSet={filteredPhotos[lightboxIndex]?.srcWebp} type="image/webp" />
+                        <img
+                            src={filteredPhotos[lightboxIndex]?.src}
+                            alt={filteredPhotos[lightboxIndex]?.alt}
+                            className="max-w-[90vw] max-h-[85vh] object-contain rounded-sm shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </picture>
 
                     <button
                         onClick={(e) => { e.stopPropagation(); navigate("next"); }}
