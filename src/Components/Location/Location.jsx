@@ -29,7 +29,7 @@ const Location = () => {
                             style={{ border: 0, minHeight: '380px' }}
                             loading="lazy"
                             allowFullScreen
-                            src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJmYV7L7HR2JQRBFMaw9-GScg&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`}
+                            src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJmYV7L7HR2JQRBFMaw9-GScg&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`}
                             title="Localização Pousada Rosália"
                         />
                     </div>
