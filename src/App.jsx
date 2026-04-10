@@ -1,10 +1,12 @@
-import { useEffect } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { LanguageProvider } from "./i18n/LanguageContext";
-import Home from "./pages/Home/Home";
-import Acomodacoes from "./pages/Acomodacoes/Acomodacoes";
+import { useEffect, Suspense, lazy } from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { LanguageProvider } from './i18n/LanguageContext'
+import Home from './pages/Home/Home'
+
+// Acomodacoes só é baixada quando o usuário navegar para lá
+const Acomodacoes = lazy(() => import('./pages/Acomodacoes/Acomodacoes'))
 
 const App = () => {
   useEffect(() => {
@@ -12,20 +14,27 @@ const App = () => {
       duration: 800,
       once: true,
       offset: 80,
-      easing: "ease-out-cubic",
-    });
-  }, []);
+      easing: 'ease-out-cubic',
+    })
+  }, [])
 
   return (
     <LanguageProvider>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Acomodacoes" element={<Acomodacoes />} />
-        {/* Redirect /Home to / to avoid duplicate routes */}
+        {/* Suspense obrigatório — sem ele React lança erro ao navegar para rota lazy */}
+        <Route
+          path="/Acomodacoes"
+          element={
+            <Suspense fallback={null}>
+              <Acomodacoes />
+            </Suspense>
+          }
+        />
         <Route path="/Home" element={<Navigate to="/" replace />} />
       </Routes>
     </LanguageProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

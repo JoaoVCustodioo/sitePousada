@@ -38,7 +38,7 @@ const RoomSwiper = ({ slides }) => {
       >
         {slides.map((slide, index) => (
           <div key={index} className="w-full min-w-full h-full flex-shrink-0">
-            <img src={slide} alt={`Foto ${index + 1}`} className="w-full h-full object-cover object-center" loading="lazy" />
+            <img src={slide} alt={`Foto ${index + 1}`} width={800} height={576} className="w-full h-full object-cover object-center" loading="lazy" />
           </div>
         ))}
       </div>

@@ -4,8 +4,15 @@ import { useLanguage } from "../../i18n/LanguageContext";
 import duplo from "../../assets/images/Duplo/duploFoto.jpeg";
 import quadruplo from "../../assets/images/Quadruplo/quadruplo.jpeg";
 import quintuplo from "../../assets/images/QuintuploVaranda/quintuplo.jpeg";
+import duploWebp from '../../assets/images/Duplo/duploFoto-desktop.webp'
+import quadruploWebp from '../../assets/images/Quadruplo/quadruplo-desktop.webp'
+import quintuploWebp from '../../assets/images/QuintuploVaranda/quintuplo-desktop.webp'
 
-const roomImages = [duplo, quadruplo, quintuplo];
+const roomImages = [
+    { original: duplo, webp: duploWebp },
+    { original: quadruplo, webp: quadruploWebp },
+    { original: quintuplo, webp: quintuploWebp },
+];
 const badgeColors = [
     "bg-white/90 text-dark/80 backdrop-blur-sm shadow-sm border-dark/10",
     "bg-white/90 text-dark/80 backdrop-blur-sm shadow-sm border-dark/10",
@@ -36,12 +43,17 @@ const RoomsPreview = () => {
                             className="group bg-white rounded-sm overflow-hidden border border-dark/5 card-hover"
                         >
                             <div className="relative h-64 md:h-72 overflow-hidden">
-                                <img
-                                    src={roomImages[index]}
-                                    alt={room.name}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                    loading="lazy"
-                                />
+                                <picture>
+                                    <source srcSet={roomImages[index].webp} type="image/webp" />
+                                    <img
+                                        src={roomImages[index].original}
+                                        alt={room.name}
+                                        width={800}
+                                        height={576}
+                                        loading="lazy"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
+                                </picture>
                                 <div className="absolute inset-0 bg-gradient-to-t from-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                 <span className={`absolute top-4 left-4 text-[10px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full border ${badgeColors[index]}`}>
                                     {room.badge}

@@ -1,11 +1,27 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { FaWhatsapp, FaChevronDown } from "react-icons/fa";
 import { useLanguage } from "../../i18n/LanguageContext";
-import Kombi from "../../assets/images/kombifachada.jpg";
-import Parquinho from "../../assets/images/parquinho.JPG";
-import Cafe from "../../assets/images/cafe.jpg";
 
-const slideImages = [Kombi, Parquinho, Cafe];
+// Originais (fallback para browsers sem suporte WebP)
+import KombiOriginal from '../../assets/images/kombifachada.jpg'
+import ParquinhoOriginal from '../../assets/images/parquinho.JPG'
+import CafeOriginal from '../../assets/images/cafe.jpg'
+
+// WebP desktop (max 1000px)
+import KombiDesktopWebp from '../../assets/images/kombifachada-desktop.webp'
+import ParquinhoDesktopWebp from '../../assets/images/parquinho-desktop.webp'
+import CafeDesktopWebp from '../../assets/images/cafe-desktop.webp'
+
+// WebP mobile (max 800px)
+import KombiMobileWebp from '../../assets/images/kombifachada-mobile.webp'
+import ParquinhoMobileWebp from '../../assets/images/parquinho-mobile.webp'
+import CafeMobileWebp from '../../assets/images/cafe-mobile.webp'
+
+const slideImages = [
+    { original: KombiOriginal, desktopWebp: KombiDesktopWebp, mobileWebp: KombiMobileWebp },
+    { original: ParquinhoOriginal, desktopWebp: ParquinhoDesktopWebp, mobileWebp: ParquinhoMobileWebp },
+    { original: CafeOriginal, desktopWebp: CafeDesktopWebp, mobileWebp: CafeMobileWebp },
+]
 
 const Hero = () => {
     const { t } = useLanguage();
@@ -31,6 +47,27 @@ const Hero = () => {
         timerRef.current = setInterval(nextSlide, 6000);
         return () => clearInterval(timerRef.current);
     }, [nextSlide]);
+
+    // Preload das imagens do hero com URLs resolvidas pelo Vite (com hash de produção)
+    useEffect(() => {
+        const isMobile = window.innerWidth <= 768
+
+        const link1 = Object.assign(document.createElement('link'), {
+            rel: 'preload', as: 'image',
+            href: isMobile ? KombiMobileWebp : KombiDesktopWebp,
+            fetchPriority: 'high',
+        })
+        const link2 = Object.assign(document.createElement('link'), {
+            rel: 'preload', as: 'image',
+            href: isMobile ? ParquinhoMobileWebp : ParquinhoDesktopWebp,
+        })
+        const link3 = Object.assign(document.createElement('link'), {
+            rel: 'preload', as: 'image',
+            href: isMobile ? CafeMobileWebp : CafeDesktopWebp,
+        })
+        document.head.append(link1, link2, link3)
+        return () => { link1.remove(); link2.remove(); link3.remove() }
+    }, [])
 
     const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
     const handleTouchMove = (e) => { touchEndX.current = e.touches[0].clientX; };
@@ -65,11 +102,22 @@ const Hero = () => {
                     key={index}
                     className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"}`}
                 >
-                    <img
-                        src={slideImages[index]}
-                        alt={slide.title}
-                        className={`w-full h-full object-cover ${imagePositions[index]} transition-transform duration-[12000ms] ease-out ${currentIndex === index ? "scale-105" : "scale-100"}`}
-                    />
+                    <picture>
+                        <source
+                            srcSet={`${slideImages[index].mobileWebp} 800w, ${slideImages[index].desktopWebp} 1200w`}
+                            sizes="(max-width: 768px) 100vw, 1200px"
+                            type="image/webp"
+                        />
+                        <img
+                            src={slideImages[index].original}
+                            alt={slide.title}
+                            width={1200}
+                            height={800}
+                            loading={index === 0 ? 'eager' : 'lazy'}
+                            fetchPriority={index === 0 ? 'high' : 'auto'}
+                            className={`w-full h-full object-cover ${imagePositions[index]} transition-transform duration-[12000ms] ease-out ${currentIndex === index ? "scale-105" : "scale-100"}`}
+                        />
+                    </picture>
                 </div>
             ))}
 
