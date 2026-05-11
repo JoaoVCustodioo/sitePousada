@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import RoomSwiper from "../RoomSwiper/RoomSwiper";
 import { useLanguage } from "../../i18n/LanguageContext";
-import { FaUserFriends, FaBed, FaWifi, FaSnowflake, FaTv, FaWhatsapp, FaChevronRight } from "react-icons/fa";
-import acomodacoesMainWebp from '../../assets/images/acomodacoesMain-desktop.webp'
+import { FaUserFriends, FaBed, FaWifi, FaSnowflake, FaTv, FaCalendarCheck, FaChevronRight } from "react-icons/fa";
+import roomsHeroOriginal from '../../assets/images/QuintuploVaranda/quintuplo.jpeg'
+import roomsHeroWebp from '../../assets/images/QuintuploVaranda/quintuplo-rooms-hero.webp'
+import roomsHeroMobileWebp from '../../assets/images/QuintuploVaranda/quintuplo-rooms-hero-mobile.webp'
 
 // Duplo WebP
 import duploWebp from '../../assets/images/Duplo/duploFoto-desktop.webp'
@@ -55,17 +57,16 @@ const Rooms = () => {
     <div className="w-full bg-primary overflow-x-hidden">
       {/* Hero */}
       <section className="relative h-[40vh] md:h-[55vh]" style={{ marginTop: "calc(36px + 56px)" }}>
-        <div
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: `url(${acomodacoesMainWebp})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundAttachment: "fixed",
-          }}
-        >
-          <div className="absolute inset-0 bg-dark/60" />
-        </div>
+        <picture className="absolute inset-0 w-full h-full">
+          <source media="(max-width: 768px)" srcSet={roomsHeroMobileWebp} type="image/webp" />
+          <source srcSet={roomsHeroWebp} type="image/webp" />
+          <img
+            src={roomsHeroOriginal}
+            alt={t("rooms.heroTitle")}
+            className="w-full h-full object-cover object-center"
+          />
+        </picture>
+        <div className="absolute inset-0 bg-dark/60" />
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
           <p className="text-tertiary tracking-widest uppercase font-medium text-xs md:text-sm mb-3" data-aos="fade-down">
             {t("rooms.heroSubtitle")}
@@ -165,12 +166,12 @@ const Rooms = () => {
 
                   {/* CTA */}
                   <a
-                    href={`https://wa.me/554788059849?text=${encodeURIComponent(quarto.whatsMsg)}`}
+                    href="https://pousadarosalia.bukly.com/booking"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-whatsapp w-full sm:w-auto self-start justify-center"
+                    className="btn-booking w-full sm:w-auto self-start justify-center"
                   >
-                    <FaWhatsapp size={18} />
+                    <FaCalendarCheck size={18} />
                     {t("rooms.checkAvailability")}
                   </a>
                 </div>

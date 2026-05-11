@@ -11,6 +11,11 @@
     <meta name="description" content="Pousada familiar em Penha/SC, a 1km do Beto Carrero World. Café da manhã incluso, transporte gratuito ao parque e quartos para famílias. Fale conosco pelo WhatsApp!" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://pousadarosalia.com.br" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&display=swap" /></noscript>
 
     <!-- Open Graph -->
     <meta property="og:title" content="Pousada Rosália — Sua casa no litoral catarinense" />
@@ -21,24 +26,39 @@
     <meta property="og:image" content="/logo-pousada.png" />
     <meta property="og:site_name" content="Pousada Rosália" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GMY02QPWC6"></script>
+    <!-- Google tag (gtag.js) - delayed to protect initial rendering -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-GMY02QPWC6');
-    </script>
+      window.addEventListener('load', function () {
+        var loadGoogleTag = function () {
+          if (window.__rosaliaGtagLoaded) return;
+          window.__rosaliaGtagLoaded = true;
 
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16786971022">
-    </script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'AW-16786971022');
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-GMY02QPWC6';
+          document.head.appendChild(script);
+
+          gtag('js', new Date());
+          gtag('config', 'G-GMY02QPWC6');
+          gtag('config', 'AW-16786971022');
+        };
+
+        var timeoutId = window.setTimeout(loadGoogleTag, 12000);
+        ['pointerdown', 'keydown', 'scroll'].forEach(function (eventName) {
+          window.addEventListener(eventName, function () {
+            window.clearTimeout(timeoutId);
+            loadGoogleTag();
+          }, { once: true, passive: true });
+        });
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'hidden') {
+            window.clearTimeout(timeoutId);
+            loadGoogleTag();
+          }
+        }, { once: true });
+      });
     </script>
 
     <!-- Structured Data -->
@@ -83,5 +103,86 @@
     <noscript>Você precisa habilitar o JavaScript para visualizar este site.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Bukly Booking Widget -->
+    <style>
+      .rosalia-bukly-cta {
+        position: fixed !important;
+        right: 0 !important;
+        bottom: 120px !important;
+        top: auto !important;
+        left: auto !important;
+        z-index: 80 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        min-height: 52px !important;
+        margin: 0 !important;
+        padding: 0 18px 0 24px !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        border: 1px solid rgba(255, 255, 255, 0.18) !important;
+        border-right: none !important;
+        border-radius: 999px 0 0 999px !important;
+        background: linear-gradient(135deg, #2A221B, #3A2F25) !important;
+        color: #fff !important;
+        box-shadow: 0 18px 42px rgba(42, 34, 27, 0.22) !important;
+        font-family: Inter, system-ui, sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 700 !important;
+        line-height: 1 !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+        writing-mode: horizontal-tb !important;
+        transform: none !important;
+        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease !important;
+      }
+
+      .rosalia-bukly-cta:hover {
+        background: linear-gradient(135deg, #846D54, #2A221B) !important;
+        box-shadow: 0 22px 48px rgba(42, 34, 27, 0.28) !important;
+        transform: translateY(-2px) !important;
+      }
+
+      .rosalia-bukly-cta svg,
+      .rosalia-bukly-cta img {
+        width: 18px !important;
+        height: 18px !important;
+        flex: 0 0 18px !important;
+        object-fit: contain !important;
+      }
+
+      @media (max-width: 640px) {
+        .rosalia-bukly-cta {
+          right: 14px !important;
+          bottom: 14px !important;
+          left: 14px !important;
+          width: auto !important;
+          min-height: 54px !important;
+          padding: 0 18px !important;
+          font-size: 11px !important;
+          border-radius: 999px !important;
+          border-right: 1px solid rgba(255, 255, 255, 0.18) !important;
+        }
+
+        a[href*="wa.me"][class*="fixed"] {
+          display: none !important;
+        }
+
+        footer>div:last-child {
+          padding-bottom: 80px !important;
+        }
+      }
+    </style>
+    <a
+      href="https://pousadarosalia.bukly.com/booking"
+      class="rosalia-bukly-cta"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Reserve Agora!"
+    >
+      Reserve Agora!
+    </a>
   </body>
 </html>

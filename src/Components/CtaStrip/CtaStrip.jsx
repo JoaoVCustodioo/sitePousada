@@ -1,6 +1,6 @@
 import { FaPhoneAlt } from "react-icons/fa";
 import { useLanguage } from "../../i18n/LanguageContext";
-import kombi from "../../assets/images/kombi.jpg";
+import kombi from "../../assets/images/kombi-desktop.webp";
 
 const CtaStrip = () => {
     const { t } = useLanguage();

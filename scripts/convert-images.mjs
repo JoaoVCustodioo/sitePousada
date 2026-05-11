@@ -34,14 +34,13 @@ for (const file of originals) {
     continue
   }
 
-  const image = sharp(file)
-  const meta = await image.metadata()
+  const image = sharp(file).rotate()
 
   // Desktop: max 1200px de largura
   if (!desktopExists) {
     await image
       .clone()
-      .resize({ width: Math.min(meta.width, 1200), withoutEnlargement: true })
+      .resize({ width: 1200, withoutEnlargement: true })
       .webp({ quality: 80 })
       .toFile(desktopPath)
   }
@@ -50,7 +49,7 @@ for (const file of originals) {
   if (!mobileExists) {
     await image
       .clone()
-      .resize({ width: Math.min(meta.width, 800), withoutEnlargement: true })
+      .resize({ width: 800, withoutEnlargement: true })
       .webp({ quality: 75 })
       .toFile(mobilePath)
   }

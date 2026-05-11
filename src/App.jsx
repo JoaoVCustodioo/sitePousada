@@ -1,7 +1,5 @@
 import { useEffect, Suspense, lazy } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
 import { LanguageProvider } from './i18n/LanguageContext'
 import Home from './pages/Home/Home'
 
@@ -10,12 +8,28 @@ const Acomodacoes = lazy(() => import('./pages/Acomodacoes/Acomodacoes'))
 
 const App = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 80,
-      easing: 'ease-out-cubic',
-    })
+    const loadAOS = async () => {
+      const [{ default: AOS }] = await Promise.all([
+        import('aos'),
+        import('aos/dist/aos.css'),
+      ])
+
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 80,
+        easing: 'ease-out-cubic',
+      })
+    }
+
+    const idleId = window.requestIdleCallback
+      ? window.requestIdleCallback(loadAOS, { timeout: 2500 })
+      : window.setTimeout(loadAOS, 1800)
+
+    return () => {
+      if (window.cancelIdleCallback) window.cancelIdleCallback(idleId)
+      else window.clearTimeout(idleId)
+    }
   }, [])
 
   return (

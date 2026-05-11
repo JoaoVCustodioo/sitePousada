@@ -31,7 +31,7 @@ const SiteFooter = () => {
 
                     {/* Column 1 — Brand */}
                     <div className="lg:col-span-1">
-                        <img src={LogoPousada} alt="Logo Pousada Rosália" className="h-14 md:h-16 mb-6 object-contain brightness-0 invert opacity-90" />
+                        <img src={LogoPousada} alt="Logo Pousada Rosália" width={110} height={58} loading="lazy" decoding="async" className="h-14 md:h-16 mb-6 object-contain brightness-0 invert opacity-90" />
                         <p className="text-white/60 font-sans text-sm leading-relaxed max-w-xs mb-6">
                             {t("footer.brand")}
                         </p>

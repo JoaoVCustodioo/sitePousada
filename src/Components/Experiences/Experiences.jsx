@@ -3,9 +3,18 @@ import { useLanguage } from "../../i18n/LanguageContext";
 import kombi from "../../assets/images/kombi.jpg";
 import cafe from "../../assets/images/cafe.jpg";
 import parquinho from "../../assets/images/parquinho.JPG";
-import parquinho2 from "../../assets/images/parquinho2.jpg";
+import praiaGrande from "../../assets/images/praiaGrande.jpg";
+import kombiWebp from "../../assets/images/kombi-desktop.webp";
+import cafeWebp from "../../assets/images/cafe-desktop.webp";
+import parquinhoWebp from "../../assets/images/parquinho-desktop.webp";
+import praiaGrandeWebp from "../../assets/images/praiaGrande-desktop.webp";
 
-const cardImages = [cafe, kombi, parquinho, parquinho2];
+const cardImages = [
+    { src: cafe, srcWebp: cafeWebp },
+    { src: kombi, srcWebp: kombiWebp },
+    { src: parquinho, srcWebp: parquinhoWebp },
+    { src: praiaGrande, srcWebp: praiaGrandeWebp },
+];
 const cardIcons = [FaCoffee, FaBus, FaChild, FaUmbrellaBeach];
 
 const Experiences = () => {
@@ -35,12 +44,18 @@ const Experiences = () => {
                                 className="group bg-white/5 backdrop-blur-sm rounded-sm overflow-hidden border border-white/10 hover:border-white/20 card-hover"
                             >
                                 <div className="relative h-56 md:h-64 overflow-hidden">
-                                    <img
-                                        src={cardImages[index]}
-                                        alt={card.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                        loading="lazy"
-                                    />
+                                    <picture>
+                                        {cardImages[index].srcWebp && <source srcSet={cardImages[index].srcWebp} type="image/webp" />}
+                                        <img
+                                            src={cardImages[index].src}
+                                            alt={card.title}
+                                            width={640}
+                                            height={480}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                            loading="lazy"
+                                            decoding="async"
+                                        />
+                                    </picture>
                                     <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/20 to-transparent" />
                                     <div className="absolute bottom-4 left-4 w-10 h-10 rounded-full bg-secondary/90 flex items-center justify-center shadow-lg">
                                         <Icon className="text-white" size={18} />

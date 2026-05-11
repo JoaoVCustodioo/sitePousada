@@ -110,6 +110,8 @@ const Header = () => {
                         <img
                             src={LogoPousada}
                             alt="Logo Pousada Rosália"
+                            width={150}
+                            height={80}
                             className={`object-contain transition-all duration-500 ${isScrolled ? "h-12 md:h-14" : "h-16 md:h-20"}`}
                         />
                     </Link>
@@ -201,7 +203,7 @@ const Header = () => {
                     }`}>
                     {/* Menu Header */}
                     <div className="flex items-center justify-between px-6 pt-8 pb-4 border-b border-dark/5">
-                        <img src={LogoPousada} alt="Logo" className="h-10 object-contain" />
+                        <img src={LogoPousada} alt="Logo" width={90} height={48} className="h-10 object-contain" />
                         <button
                             className="text-dark hover:text-secondary p-2 focus:outline-none transition-colors bg-dark/5 rounded-full"
                             onClick={() => setIsMenuOpen(false)}

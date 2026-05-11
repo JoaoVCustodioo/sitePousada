@@ -2,25 +2,19 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { FaWhatsapp, FaChevronDown } from "react-icons/fa";
 import { useLanguage } from "../../i18n/LanguageContext";
 
-// Originais (fallback para browsers sem suporte WebP)
-import KombiOriginal from '../../assets/images/kombifachada.jpg'
-import ParquinhoOriginal from '../../assets/images/parquinho.JPG'
-import CafeOriginal from '../../assets/images/cafe.jpg'
+// WebP hero
+import KombiDesktopWebp from '../../assets/images/kombifachada-hero.webp'
+import ExteriorDesktopWebp from '../../assets/images/IMG_6263-hero.webp'
+import CafeDesktopWebp from '../../assets/images/cafe2-hero.webp'
 
-// WebP desktop (max 1000px)
-import KombiDesktopWebp from '../../assets/images/kombifachada-desktop.webp'
-import ParquinhoDesktopWebp from '../../assets/images/parquinho-desktop.webp'
-import CafeDesktopWebp from '../../assets/images/cafe-desktop.webp'
-
-// WebP mobile (max 800px)
-import KombiMobileWebp from '../../assets/images/kombifachada-mobile.webp'
-import ParquinhoMobileWebp from '../../assets/images/parquinho-mobile.webp'
-import CafeMobileWebp from '../../assets/images/cafe-mobile.webp'
+import KombiMobileWebp from '../../assets/images/kombifachada-hero-mobile.webp'
+import ExteriorMobileWebp from '../../assets/images/IMG_6263-hero-mobile.webp'
+import CafeMobileWebp from '../../assets/images/cafe2-hero-mobile.webp'
 
 const slideImages = [
-    { original: KombiOriginal, desktopWebp: KombiDesktopWebp, mobileWebp: KombiMobileWebp },
-    { original: ParquinhoOriginal, desktopWebp: ParquinhoDesktopWebp, mobileWebp: ParquinhoMobileWebp },
-    { original: CafeOriginal, desktopWebp: CafeDesktopWebp, mobileWebp: CafeMobileWebp },
+    { desktopWebp: KombiDesktopWebp, mobileWebp: KombiMobileWebp },
+    { desktopWebp: ExteriorDesktopWebp, mobileWebp: ExteriorMobileWebp },
+    { desktopWebp: CafeDesktopWebp, mobileWebp: CafeMobileWebp },
 ]
 
 const Hero = () => {
@@ -28,6 +22,7 @@ const Hero = () => {
     const slides = t("hero.slides");
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
+    const [loadedSlides, setLoadedSlides] = useState(() => new Set([0]));
     const touchStartX = useRef(0);
     const touchEndX = useRef(0);
     const timerRef = useRef(null);
@@ -35,6 +30,12 @@ const Hero = () => {
     const goToSlide = useCallback((index) => {
         if (isTransitioning) return;
         setIsTransitioning(true);
+        setLoadedSlides((prev) => {
+            if (prev.has(index)) return prev;
+            const next = new Set(prev);
+            next.add(index);
+            return next;
+        });
         setCurrentIndex(index);
         setTimeout(() => setIsTransitioning(false), 1000);
     }, [isTransitioning]);
@@ -44,8 +45,14 @@ const Hero = () => {
     }, [currentIndex, goToSlide, slides.length]);
 
     useEffect(() => {
-        timerRef.current = setInterval(nextSlide, 6000);
-        return () => clearInterval(timerRef.current);
+        const startTimer = window.setTimeout(() => {
+            timerRef.current = setInterval(nextSlide, 6000);
+        }, 10000);
+
+        return () => {
+            window.clearTimeout(startTimer);
+            clearInterval(timerRef.current);
+        };
     }, [nextSlide]);
 
     // Preload das imagens do hero com URLs resolvidas pelo Vite (com hash de produção)
@@ -57,17 +64,48 @@ const Hero = () => {
             href: isMobile ? KombiMobileWebp : KombiDesktopWebp,
             fetchPriority: 'high',
         })
-        const link2 = Object.assign(document.createElement('link'), {
-            rel: 'preload', as: 'image',
-            href: isMobile ? ParquinhoMobileWebp : ParquinhoDesktopWebp,
-        })
-        const link3 = Object.assign(document.createElement('link'), {
-            rel: 'preload', as: 'image',
-            href: isMobile ? CafeMobileWebp : CafeDesktopWebp,
-        })
-        document.head.append(link1, link2, link3)
-        return () => { link1.remove(); link2.remove(); link3.remove() }
+        document.head.append(link1)
+        return () => { link1.remove() }
     }, [])
+
+    useEffect(() => {
+        setLoadedSlides((prev) => {
+            if (prev.has(currentIndex)) return prev;
+            const next = new Set(prev);
+            next.add(currentIndex);
+            return next;
+        });
+    }, [currentIndex]);
+
+    useEffect(() => {
+        const preloadNextSlides = () => {
+            const isMobile = window.innerWidth <= 768;
+            slideImages.slice(1).forEach((slide, index) => {
+                const image = new Image();
+                image.decoding = 'async';
+                image.loading = 'lazy';
+                image.src = isMobile ? slide.mobileWebp : slide.desktopWebp;
+                image.onload = () => {
+                    setLoadedSlides((prev) => {
+                        const slideIndex = index + 1;
+                        if (prev.has(slideIndex)) return prev;
+                        const next = new Set(prev);
+                        next.add(slideIndex);
+                        return next;
+                    });
+                };
+            });
+        };
+
+        const idleId = window.requestIdleCallback
+            ? window.requestIdleCallback(preloadNextSlides, { timeout: 2500 })
+            : window.setTimeout(preloadNextSlides, 1800);
+
+        return () => {
+            if (window.cancelIdleCallback) window.cancelIdleCallback(idleId);
+            else window.clearTimeout(idleId);
+        };
+    }, []);
 
     const handleTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
     const handleTouchMove = (e) => { touchEndX.current = e.touches[0].clientX; };
@@ -85,9 +123,9 @@ const Hero = () => {
     };
 
     const imagePositions = [
-        "object-center md:object-[center_60%]", // Kombi Fachada
-        "object-[center_top] md:object-center", // Parquinho
-        "object-center" // Cafe
+        "object-right md:object-[center_60%]", // Kombi Fachada
+        "object-center", // Area externa
+        "object-center md:object-[center_45%]" // Cafe
     ];
 
     return (
@@ -102,22 +140,29 @@ const Hero = () => {
                     key={index}
                     className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${currentIndex === index ? "opacity-100 z-10" : "opacity-0 z-0"}`}
                 >
-                    <picture>
-                        <source
-                            srcSet={`${slideImages[index].mobileWebp} 800w, ${slideImages[index].desktopWebp} 1200w`}
-                            sizes="(max-width: 768px) 100vw, 1200px"
-                            type="image/webp"
-                        />
-                        <img
-                            src={slideImages[index].original}
-                            alt={slide.title}
-                            width={1200}
-                            height={800}
-                            loading={index === 0 ? 'eager' : 'lazy'}
-                            fetchPriority={index === 0 ? 'high' : 'auto'}
-                            className={`w-full h-full object-cover ${imagePositions[index]} transition-transform duration-[12000ms] ease-out ${currentIndex === index ? "scale-105" : "scale-100"}`}
-                        />
-                    </picture>
+                    {loadedSlides.has(index) && (
+                        <picture>
+                            <source
+                                media="(max-width: 768px)"
+                                srcSet={slideImages[index].mobileWebp}
+                                type="image/webp"
+                            />
+                            <source
+                                srcSet={slideImages[index].desktopWebp}
+                                type="image/webp"
+                            />
+                            <img
+                                src={slideImages[index].desktopWebp}
+                                alt={slide.title}
+                                width={1600}
+                                height={1200}
+                                loading={index === 0 ? 'eager' : 'lazy'}
+                                decoding={index === 0 ? 'sync' : 'async'}
+                                fetchPriority={index === 0 ? 'high' : 'low'}
+                                className={`w-full h-full object-cover ${imagePositions[index]} transition-transform duration-[12000ms] ease-out ${currentIndex === index ? "scale-105" : "scale-100"}`}
+                            />
+                        </picture>
+                    )}
                 </div>
             ))}
 

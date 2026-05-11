@@ -23,6 +23,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# local audit reports
+lighthouse-*.report*.html
+lighthouse-*.report*.json
+
 # claude
 .claude/
 

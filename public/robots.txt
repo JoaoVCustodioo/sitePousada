@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pousadarosalia.com.br/sitemap.xml

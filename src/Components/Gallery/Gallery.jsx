@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+﻿import { useState, useCallback } from "react";
 import { FaTimes, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { useLanguage } from "../../i18n/LanguageContext";
 
@@ -11,6 +11,18 @@ import parquinho from "../../assets/images/parquinho.JPG";
 import parquinho1 from "../../assets/images/parquinho1.JPG";
 import parquinho2 from "../../assets/images/parquinho2.jpg";
 import parquinho3 from "../../assets/images/parquinho3.jpg";
+import exterior1 from "../../assets/images/IMG_6235.jpg";
+import exterior2 from "../../assets/images/IMG_6238.jpg";
+import exterior3 from "../../assets/images/IMG_6246.jpg";
+import exterior4 from "../../assets/images/IMG_6254.jpg";
+import exterior5 from "../../assets/images/IMG_6255.jpg";
+import exterior6 from "../../assets/images/IMG_6258.jpg";
+import exterior7 from "../../assets/images/IMG_6263.jpg";
+import exterior8 from "../../assets/images/IMG_6265.jpg";
+import exterior9 from "../../assets/images/IMG_6268.jpg";
+import exterior10 from "../../assets/images/IMG_6275.jpg";
+import exterior11 from "../../assets/images/IMG_6282.jpg";
+import exterior12 from "../../assets/images/IMG_6292.jpg";
 import fotoQuartoMain from "../../assets/images/fotoNossosQuartosMain.jpg";
 import acomodacoesMain from "../../assets/images/acomodacoesMain.jpg";
 import duplo from "../../assets/images/Duplo/duploFoto.jpeg";
@@ -32,6 +44,18 @@ import parquinhoWebp from '../../assets/images/parquinho-desktop.webp'
 import parquinho1Webp from '../../assets/images/parquinho1-desktop.webp'
 import parquinho2Webp from '../../assets/images/parquinho2-desktop.webp'
 import parquinho3Webp from '../../assets/images/parquinho3-desktop.webp'
+import exterior1Webp from '../../assets/images/IMG_6235-desktop.webp'
+import exterior2Webp from '../../assets/images/IMG_6238-desktop.webp'
+import exterior3Webp from '../../assets/images/IMG_6246-desktop.webp'
+import exterior4Webp from '../../assets/images/IMG_6254-desktop.webp'
+import exterior5Webp from '../../assets/images/IMG_6255-desktop.webp'
+import exterior6Webp from '../../assets/images/IMG_6258-desktop.webp'
+import exterior7Webp from '../../assets/images/IMG_6263-desktop.webp'
+import exterior8Webp from '../../assets/images/IMG_6265-desktop.webp'
+import exterior9Webp from '../../assets/images/IMG_6268-desktop.webp'
+import exterior10Webp from '../../assets/images/IMG_6275-desktop.webp'
+import exterior11Webp from '../../assets/images/IMG_6282-desktop.webp'
+import exterior12Webp from '../../assets/images/IMG_6292-desktop.webp'
 import fotoQuartoMainWebp from '../../assets/images/fotoNossosQuartosMain-desktop.webp'
 import acomodacoesMainWebp from '../../assets/images/acomodacoesMain-desktop.webp'
 import duploWebp from '../../assets/images/Duplo/duploFoto-desktop.webp'
@@ -44,13 +68,28 @@ import quadruploVarandaWebp from '../../assets/images/QuadruploVaranda/quadruplo
 import quintuploWebp from '../../assets/images/QuintuploVaranda/quintuplo-desktop.webp'
 
 const allPhotos = [
-    { src: fotoQuartoMain, srcWebp: fotoQuartoMainWebp, alt: "Pousada overview", category: "areas_comuns" },
-    { src: acomodacoesMain, srcWebp: acomodacoesMainWebp, alt: "Acomodações details", category: "areas_comuns" },
+    { src: fotoQuartoMain, srcWebp: fotoQuartoMainWebp, alt: "Room overview", category: "quartos" },
+    { src: acomodacoesMain, srcWebp: acomodacoesMainWebp, alt: "Room details", category: "quartos" },
     { src: kombi, srcWebp: kombiWebp, alt: "Madagaskombi", category: "areas_comuns" },
+    { src: exterior1, srcWebp: exterior1Webp, alt: "Pousada exterior", category: "areas_comuns" },
+    { src: exterior2, srcWebp: exterior2Webp, alt: "Pousada exterior detail", category: "areas_comuns" },
+    { src: exterior3, srcWebp: exterior3Webp, alt: "Pousada outdoor area", category: "areas_comuns" },
+    { src: exterior4, srcWebp: exterior4Webp, alt: "Pousada facade", category: "areas_comuns" },
+    { src: exterior5, srcWebp: exterior5Webp, alt: "Pousada common area", category: "areas_comuns" },
+    { src: exterior6, srcWebp: exterior6Webp, alt: "Pousada outdoor view", category: "areas_comuns" },
+    { src: exterior7, srcWebp: exterior7Webp, alt: "Pousada garden", category: "areas_comuns" },
+    { src: exterior8, srcWebp: exterior8Webp, alt: "Pousada exterior view", category: "areas_comuns" },
+    { src: exterior9, srcWebp: exterior9Webp, alt: "Pousada entrance", category: "areas_comuns" },
+    { src: exterior10, srcWebp: exterior10Webp, alt: "Pousada leisure area", category: "areas_comuns" },
+    { src: exterior11, srcWebp: exterior11Webp, alt: "Pousada outdoor seating", category: "areas_comuns" },
+    { src: exterior12, srcWebp: exterior12Webp, alt: "Pousada exterior space", category: "areas_comuns" },
     { src: cafe, srcWebp: cafeWebp, alt: "Breakfast", category: "cafe_da_manha" },
     { src: cafe1, srcWebp: cafe1Webp, alt: "Breakfast details", category: "cafe_da_manha" },
     { src: cafe2, srcWebp: cafe2Webp, alt: "Breakfast table", category: "cafe_da_manha" },
     { src: cafe3, srcWebp: cafe3Webp, alt: "Breakfast items", category: "cafe_da_manha" },
+    { src: exterior1, srcWebp: exterior1Webp, alt: "Breakfast room", category: "cafe_da_manha" },
+    { src: exterior2, srcWebp: exterior2Webp, alt: "Breakfast room detail", category: "cafe_da_manha" },
+    { src: exterior3, srcWebp: exterior3Webp, alt: "Breakfast seating area", category: "cafe_da_manha" },
     { src: parquinho, srcWebp: parquinhoWebp, alt: "Playground overview", category: "areas_comuns" },
     { src: parquinho1, srcWebp: parquinho1Webp, alt: "Playground slide", category: "areas_comuns" },
     { src: parquinho2, srcWebp: parquinho2Webp, alt: "Playground area", category: "areas_comuns" },
