@@ -26,40 +26,13 @@
     <meta property="og:image" content="/logo-pousada.png" />
     <meta property="og:site_name" content="Pousada Rosália" />
 
-    <!-- Google tag (gtag.js) - delayed to protect initial rendering -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.addEventListener('load', function () {
-        var loadGoogleTag = function () {
-          if (window.__rosaliaGtagLoaded) return;
-          window.__rosaliaGtagLoaded = true;
-
-          var script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-GMY02QPWC6';
-          document.head.appendChild(script);
-
-          gtag('js', new Date());
-          gtag('config', 'G-GMY02QPWC6');
-          gtag('config', 'AW-16786971022');
-        };
-
-        var timeoutId = window.setTimeout(loadGoogleTag, 12000);
-        ['pointerdown', 'keydown', 'scroll'].forEach(function (eventName) {
-          window.addEventListener(eventName, function () {
-            window.clearTimeout(timeoutId);
-            loadGoogleTag();
-          }, { once: true, passive: true });
-        });
-        document.addEventListener('visibilitychange', function () {
-          if (document.visibilityState === 'hidden') {
-            window.clearTimeout(timeoutId);
-            loadGoogleTag();
-          }
-        }, { once: true });
-      });
-    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WN6P9ZMQ');</script>
+    <!-- End Google Tag Manager -->
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -100,6 +73,10 @@
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WN6P9ZMQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <noscript>Você precisa habilitar o JavaScript para visualizar este site.</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
@@ -184,5 +161,18 @@
     >
       Reserve Agora!
     </a>
+    <script>
+      document.addEventListener('click', function (event) {
+        var bookingLink = event.target.closest('a[href*="pousadarosalia.bukly.com/booking"]');
+        if (!bookingLink) return;
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'click_reservar',
+          booking_url: bookingLink.href,
+          click_text: bookingLink.textContent.trim()
+        });
+      });
+    </script>
   </body>
 </html>
