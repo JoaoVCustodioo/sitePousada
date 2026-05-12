@@ -5,6 +5,7 @@ import Home from './pages/Home/Home'
 
 // Acomodacoes só é baixada quando o usuário navegar para lá
 const Acomodacoes = lazy(() => import('./pages/Acomodacoes/Acomodacoes'))
+const LegalPage = lazy(() => import('./pages/Legal/LegalPage'))
 
 const App = () => {
   useEffect(() => {
@@ -45,7 +46,16 @@ const App = () => {
             </Suspense>
           }
         />
+        <Route
+          path="/:slug"
+          element={
+            <Suspense fallback={null}>
+              <LegalPage />
+            </Suspense>
+          }
+        />
         <Route path="/Home" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </LanguageProvider>
   )

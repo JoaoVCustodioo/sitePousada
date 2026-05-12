@@ -238,6 +238,8 @@
         "checkout": "Check-out: hasta las 11h",
         "address": "Dirección",
         "social": "Redes Sociales",
+        "privacyPolicy": "Política de Privacidad",
+        "bookingPolicy": "Reservas y Cancelación",
         "copyright": "Pousada Rosália. Todos los derechos reservados.",
         "createdWith": "Creado con",
         "love": "cariño y dedicación"

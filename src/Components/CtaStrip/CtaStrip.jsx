@@ -1,4 +1,4 @@
-import { FaPhoneAlt } from "react-icons/fa";
+import { FaCalendarCheck, FaPhoneAlt } from "react-icons/fa";
 import { useLanguage } from "../../i18n/LanguageContext";
 import kombi from "../../assets/images/kombi-desktop.webp";
 
@@ -39,6 +39,15 @@ const CtaStrip = () => {
                     data-aos="fade-up"
                     data-aos-delay="200"
                 >
+                    <a
+                        href="https://pousadarosalia.bukly.com/booking"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-booking"
+                    >
+                        <FaCalendarCheck size={18} />
+                        {t("rooms.checkAvailability")}
+                    </a>
                     <a
                         href="tel:+554733451821"
                         className="btn-outline border-white/40 text-white hover:bg-white/10 hover:text-white"

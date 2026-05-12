@@ -94,12 +94,16 @@ const Testimonials = () => {
                             <button
                                 key={index}
                                 onClick={() => setCurrentIndex(index)}
-                                className={`transition-all duration-300 rounded-full ${currentIndex === index
-                                    ? "w-8 h-2 bg-secondary"
-                                    : "w-2 h-2 bg-dark/15 hover:bg-dark/30"
-                                    }`}
+                                className="w-8 h-8 flex items-center justify-center rounded-full"
                                 aria-label={`${t("testimonials.subtitle")} ${index + 1}`}
-                            />
+                            >
+                                <span
+                                    className={`block transition-all duration-300 rounded-full ${currentIndex === index
+                                        ? "w-8 h-2 bg-secondary"
+                                        : "w-2 h-2 bg-dark/15 hover:bg-dark/30"
+                                        }`}
+                                />
+                            </button>
                         ))}
                     </div>
                 </div>

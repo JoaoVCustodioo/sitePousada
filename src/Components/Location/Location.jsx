@@ -4,6 +4,10 @@ import { useLanguage } from "../../i18n/LanguageContext";
 const Location = () => {
     const { t } = useLanguage();
     const landmarks = t("location.landmarks");
+    const mapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+    const mapEmbedUrl = mapsApiKey
+        ? `https://www.google.com/maps/embed/v1/place?q=place_id:ChIJmYV7L7HR2JQRBFMaw9-GScg&key=${mapsApiKey}`
+        : "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.498427952136!2d-48.611111!3d-26.786944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d8d1e370baeb13%3A0x6eafdd201b2a970e!2sPousada%20Ros%C3%A1lia!5e0!3m2!1spt-BR!2sbr!4v1654123456789!5m2!1spt-BR!2sbr";
 
     return (
         <section id="localizacao" className="section-padding bg-dark">
@@ -29,7 +33,8 @@ const Location = () => {
                             style={{ border: 0, minHeight: '380px' }}
                             loading="lazy"
                             allowFullScreen
-                            src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJmYV7L7HR2JQRBFMaw9-GScg&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`}
+                            referrerPolicy="no-referrer-when-downgrade"
+                            src={mapEmbedUrl}
                             title="Localização Pousada Rosália"
                         />
                     </div>

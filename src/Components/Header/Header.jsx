@@ -75,12 +75,12 @@ const Header = () => {
             <div className="bg-dark/95 backdrop-blur-sm text-white/90 py-1.5 px-4 w-full fixed top-0 left-0 z-[60] border-b border-white/5">
                 <div className="flex justify-center sm:justify-between items-center max-w-7xl mx-auto text-[10px] sm:text-xs font-sans font-medium h-6">
                     <div className="flex items-center gap-3 sm:gap-5">
-                        <a href="tel:+554733451821" className="flex items-center gap-1.5 hover:text-white transition-colors">
+                        <a href="tel:+554733451821" aria-label="Ligar para a Pousada Rosália" className="flex items-center gap-1.5 hover:text-white transition-colors">
                             <FaPhone size={10} />
                             <span className="hidden sm:inline">(47) 3345-1821</span>
                         </a>
                         <span className="text-white/20">|</span>
-                        <a href="https://wa.me/554788059849?text=Olá! Gostaria de informações sobre a Pousada Rosália." target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-accent transition-colors">
+                        <a href="https://wa.me/554788059849?text=Olá! Gostaria de informações sobre a Pousada Rosália." target="_blank" rel="noopener noreferrer" aria-label="Falar com a Pousada Rosália pelo WhatsApp" className="flex items-center gap-1.5 hover:text-accent transition-colors">
                             <FaWhatsapp size={12} className="text-accent" />
                             <span className="hidden sm:inline">(47) 98805-9849</span>
                         </a>
@@ -170,7 +170,7 @@ const Header = () => {
                             href={`https://wa.me/554788059849?text=${encodeURIComponent(t("hero.whatsappMessage"))}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-2 bg-accent hover:bg-green-600 text-white text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-sm transition-all duration-300 hover:scale-[1.02] shadow-sm"
+                            className="flex items-center gap-2 bg-[#128C4A] hover:bg-[#0F7A3F] text-white text-xs font-semibold tracking-wider uppercase px-5 py-2.5 rounded-sm transition-all duration-300 hover:scale-[1.02] shadow-sm"
                         >
                             <FaWhatsapp size={16} />
                             {t("nav.contact")}
@@ -262,7 +262,7 @@ const Header = () => {
                             href={`https://wa.me/554788059849?text=${encodeURIComponent(t("hero.whatsappMessage"))}`}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 w-full bg-accent hover:bg-green-600 text-white text-[13px] font-semibold tracking-wider uppercase px-5 py-3.5 rounded-md transition-all duration-300 shadow-md transform hover:-translate-y-1"
+                            className="flex items-center justify-center gap-2 w-full bg-[#128C4A] hover:bg-[#0F7A3F] text-white text-[13px] font-semibold tracking-wider uppercase px-5 py-3.5 rounded-md transition-all duration-300 shadow-md transform hover:-translate-y-1"
                         >
                             <FaWhatsapp size={20} />
                             {t("nav.contact")}

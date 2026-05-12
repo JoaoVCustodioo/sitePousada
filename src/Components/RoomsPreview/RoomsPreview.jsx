@@ -7,11 +7,14 @@ import quintuplo from "../../assets/images/QuintuploVaranda/quintuplo.jpeg";
 import duploWebp from '../../assets/images/Duplo/duploFoto-desktop.webp'
 import quadruploWebp from '../../assets/images/Quadruplo/quadruplo-desktop.webp'
 import quintuploWebp from '../../assets/images/QuintuploVaranda/quintuplo-desktop.webp'
+import duploMobileWebp from '../../assets/images/Duplo/duploFoto-mobile.webp'
+import quadruploMobileWebp from '../../assets/images/Quadruplo/quadruplo-mobile.webp'
+import quintuploMobileWebp from '../../assets/images/QuintuploVaranda/quintuplo-mobile.webp'
 
 const roomImages = [
-    { original: duplo, webp: duploWebp },
-    { original: quadruplo, webp: quadruploWebp },
-    { original: quintuplo, webp: quintuploWebp },
+    { original: duplo, webp: duploWebp, mobileWebp: duploMobileWebp },
+    { original: quadruplo, webp: quadruploWebp, mobileWebp: quadruploMobileWebp },
+    { original: quintuplo, webp: quintuploWebp, mobileWebp: quintuploMobileWebp },
 ];
 const badgeColors = [
     "bg-white/90 text-dark/80 backdrop-blur-sm shadow-sm border-dark/10",
@@ -44,6 +47,7 @@ const RoomsPreview = () => {
                         >
                             <div className="relative h-64 md:h-72 overflow-hidden">
                                 <picture>
+                                    <source media="(max-width: 768px)" srcSet={roomImages[index].mobileWebp} type="image/webp" />
                                     <source srcSet={roomImages[index].webp} type="image/webp" />
                                     <img
                                         src={roomImages[index].original}

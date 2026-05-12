@@ -76,7 +76,7 @@
   }
 
   .btn-whatsapp {
-    @apply inline-flex items-center gap-3 bg-accent hover:bg-green-600 text-white font-sans font-semibold text-sm tracking-wider uppercase px-8 py-4 rounded-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg shadow-accent/20;
+    @apply inline-flex items-center gap-3 bg-[#0D6B38] hover:bg-[#0A5A2F] text-white font-sans font-bold text-sm tracking-wider uppercase px-8 py-4 rounded-sm transition-all duration-300 hover:scale-[1.02] hover:shadow-lg shadow-accent/20;
   }
 
   .btn-booking {

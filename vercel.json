@@ -9,5 +9,11 @@
         }
       ]
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!assets/|logo-pousada.png|manifest.json|robots.txt|sitemap.xml).*)",
+      "destination": "/"
+    }
   ]
 }

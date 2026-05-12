@@ -8,12 +8,16 @@ import kombiWebp from "../../assets/images/kombi-desktop.webp";
 import cafeWebp from "../../assets/images/cafe-desktop.webp";
 import parquinhoWebp from "../../assets/images/parquinho-desktop.webp";
 import praiaGrandeWebp from "../../assets/images/praiaGrande-desktop.webp";
+import kombiMobileWebp from "../../assets/images/kombi-mobile.webp";
+import cafeMobileWebp from "../../assets/images/cafe-mobile.webp";
+import parquinhoMobileWebp from "../../assets/images/parquinho-mobile.webp";
+import praiaGrandeMobileWebp from "../../assets/images/praiaGrande-mobile.webp";
 
 const cardImages = [
-    { src: cafe, srcWebp: cafeWebp },
-    { src: kombi, srcWebp: kombiWebp },
-    { src: parquinho, srcWebp: parquinhoWebp },
-    { src: praiaGrande, srcWebp: praiaGrandeWebp },
+    { src: cafe, srcWebp: cafeWebp, mobileWebp: cafeMobileWebp },
+    { src: kombi, srcWebp: kombiWebp, mobileWebp: kombiMobileWebp },
+    { src: parquinho, srcWebp: parquinhoWebp, mobileWebp: parquinhoMobileWebp },
+    { src: praiaGrande, srcWebp: praiaGrandeWebp, mobileWebp: praiaGrandeMobileWebp },
 ];
 const cardIcons = [FaCoffee, FaBus, FaChild, FaUmbrellaBeach];
 
@@ -45,6 +49,7 @@ const Experiences = () => {
                             >
                                 <div className="relative h-56 md:h-64 overflow-hidden">
                                     <picture>
+                                        <source media="(max-width: 768px)" srcSet={cardImages[index].mobileWebp} type="image/webp" />
                                         {cardImages[index].srcWebp && <source srcSet={cardImages[index].srcWebp} type="image/webp" />}
                                         <img
                                             src={cardImages[index].src}

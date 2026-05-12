@@ -216,12 +216,16 @@ const Hero = () => {
                             <button
                                 key={index}
                                 onClick={() => goToSlide(index)}
-                                className={`transition-all duration-500 rounded-full ${currentIndex === index
-                                    ? "w-10 h-2 bg-secondary"
-                                    : "w-2 h-2 bg-white/40 hover:bg-white/70"
-                                    }`}
+                                className="w-8 h-8 flex items-center justify-center rounded-full"
                                 aria-label={`${t("hero.goToSlide")} ${index + 1}`}
-                            />
+                            >
+                                <span
+                                    className={`block transition-all duration-500 rounded-full ${currentIndex === index
+                                        ? "w-10 h-2 bg-secondary"
+                                        : "w-2 h-2 bg-white/40 hover:bg-white/70"
+                                        }`}
+                                />
+                            </button>
                         ))}
                     </div>
 

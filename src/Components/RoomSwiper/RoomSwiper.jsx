@@ -57,10 +57,14 @@ const RoomSwiper = ({ slides }) => {
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`transition-all duration-300 rounded-full ${currentIndex === index ? "w-6 h-1.5 bg-secondary" : "w-1.5 h-1.5 bg-white/50"
-              }`}
+            className="w-7 h-7 flex items-center justify-center rounded-full"
             aria-label={`Foto ${index + 1}`}
-          />
+          >
+            <span
+              className={`block transition-all duration-300 rounded-full ${currentIndex === index ? "w-6 h-1.5 bg-secondary" : "w-1.5 h-1.5 bg-white/50"
+                }`}
+            />
+          </button>
         ))}
       </div>
     </div>
